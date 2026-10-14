@@ -1,0 +1,508 @@
+{
+  "session_id": "36e65dc9-7001-412e-b5e4-7d048122cebd",
+  "source_url": "https://help.dayforce.com/r/documents/Dayforce-RESTful-Web-Services-Developer-Guide/RESTful-Retrieve-Department-Data",
+  "doc_type": "DocType.STATIC_HTML",
+  "total_endpoints": 50,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/V1/OrgUnits",
+      "summary": "RESTful Get Org Unit XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/OrgUnits",
+      "summary": "POST Org Unit Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/OrgUnits",
+      "summary": "PATCH Org Unit Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Departments",
+      "summary": "RESTful Get Department XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/Departments",
+      "summary": "POST Department Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/Departments",
+      "summary": "PATCH Department Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Jobs",
+      "summary": "RESTful Get Job XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/Jobs",
+      "summary": "POST Job Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/ClientMetadata",
+      "summary": "Determine Which URL to Use",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/BackgroundScreening/PersonalIdentifiableInformation",
+      "summary": "PATCH Candidate Background Screening Personal Identifiable Information",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/BackgroundScreening/AdjudicationStatus",
+      "summary": "PATCH Candidate Background Screening Adjudication Status",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/BackgroundScreening/Status",
+      "summary": "PATCH Candidate Background Screening Status",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/Employees",
+      "summary": "POST and PATCH Employee Subordinate Resources",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/Jobs",
+      "summary": "PATCH Job Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Positions",
+      "summary": "RESTful Get Position XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/Positions",
+      "summary": "POST Position Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/Positions",
+      "summary": "PATCH Position Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/ContactInformationTypes",
+      "summary": "RESTful Get HR\u00a0Admin XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/{employeeXRefCode}/EmployeeAvailability",
+      "summary": "POST Availability",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LaborMetrics/xRefCode",
+      "summary": "RESTful Get Labor Metrics XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LaborMetricTypes/xRefCode",
+      "summary": "RESTful Get Labor Metric Type XRefCodes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/LaborMetrics",
+      "summary": "POST Labor Metrics",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/LaborMetrics",
+      "summary": "PATCH Labor Metrics",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/LaborMetricTypes",
+      "summary": "POST Labor Metric Types",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/LaborMetricTypes",
+      "summary": "PATCH Labor Metric Types",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LegacyLaborMetric",
+      "summary": "RESTful Get Legacy Labor Metrics",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/V1/LegacyLaborMetric",
+      "summary": "RESTful Delete Legacy Labor Metrics",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/LegacyLaborMetric",
+      "summary": "POST Legacy Labor Metrics",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/LegacyLaborMetric",
+      "summary": "PATCH Legacy Labor Metrics",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/Projects",
+      "summary": "POST Projects Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/Projects",
+      "summary": "PATCH Projects Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeeBalancePeriods",
+      "summary": "Get Employee Balance Periods",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeeBalanceTransactions",
+      "summary": "Get Employee Balance Transactions",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/EmployeeBalanceTransactions",
+      "summary": "POST Employee Balance Transactions",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/EmployeeBalanceTransactions",
+      "summary": "PATCH Employee Balance Transactions",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeePaySummaries",
+      "summary": "RESTful Get Employee Pay Summaries",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/EmployeePayAdjustments",
+      "summary": "POST Employee Pay Adjustment Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/EmployeePayAdjustments",
+      "summary": "PATCH Employee Pay Adjustment Data",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/JobFeeds",
+      "summary": "RESTful Get Job Postings",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v1/JobPostingQuestionnaires",
+      "summary": "RESTful POST Candidate Sourcing",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/EmployeePunches",
+      "summary": "POST Employee Punches",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/EmployeePunches/{xRefCode}",
+      "summary": "PATCH Employee Punches",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/EmployeeSchedules",
+      "summary": "POST Employee Schedules",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/EmployeeSchedules",
+      "summary": "PATCH Employee Schedules",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/BackgroundScreening/BillingCode",
+      "summary": "POST Background Screening Billing Codes",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/BackgroundScreening/Package",
+      "summary": "POST Background Screening Packages",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/V1/BackgroundScreening",
+      "summary": "POST Background Screening Provider Statuses",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/BackgroundScreening",
+      "summary": "PATCH Candidate Background Screening",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "PATCH",
+      "path": "/V1/BackgroundScreening/CandidateRightToWorkResults",
+      "summary": "PATCH Candidate Background Screening Right to Work",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/jobfeeds",
+      "summary": "Track Candidate Source",
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    }
+  ]
+}

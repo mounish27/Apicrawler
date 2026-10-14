@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Doc Intelligence Engine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5' }
+          },
+          animation: {
+            'pulse-slow': 'pulse 2.5s cubic-bezier(0.4,0,0.6,1) infinite',
+            'spin-slow': 'spin 3s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #1e1e2e; }
+    ::-webkit-scrollbar-thumb { background: #3b3b52; border-radius: 3px; }
+    .log-line { animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .badge-GET    { background:#064e3b; color:#6ee7b7; border:1px solid #065f46; }
+    .badge-POST   { background:#1e3a5f; color:#93c5fd; border:1px solid #1d4ed8; }
+    .badge-PUT    { background:#451a03; color:#fcd34d; border:1px solid #92400e; }
+    .badge-PATCH  { background:#3b0764; color:#d8b4fe; border:1px solid #7e22ce; }
+    .badge-DELETE { background:#450a0a; color:#fca5a5; border:1px solid #991b1b; }
+    .badge-HEAD   { background:#1c1c2e; color:#94a3b8; border:1px solid #334155; }
+    .ep-row:hover { background: #1e1e2e; }
+    .ep-row { cursor: pointer; }
+    .ep-row.expanded { background: #1e1e2e !important; }
+    .json-block { background:#0a0a14; border:1px solid #1e293b; border-radius:6px; padding:12px;
+                  font-family:monospace; font-size:11px; color:#94a3b8; overflow-x:auto;
+                  white-space:pre; max-height:240px; overflow-y:auto; line-height:1.6; }
+    .detail-panel { background:#13131f; border-top:1px solid #1e293b; }
+  </style>
+</head>
+<body class="bg-[#0f0f1a] text-slate-200 min-h-screen font-sans">
+
+<!-- ── HEADER ── -->
+<header class="border-b border-slate-800 bg-[#12121f]/80 backdrop-blur sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-brand-500 flex items-center justify-center text-white font-bold text-lg">⚡</div>
+      <div>
+        <div class="font-semibold text-white text-sm">API Doc Intelligence Engine</div>
+        <div class="text-xs text-slate-500">Crawl any API docs → OpenAPI · Swagger · Postman</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="/docs" target="_blank"
+         class="text-xs px-3 py-1.5 rounded-md border border-slate-700 text-slate-400 hover:border-brand-500 hover:text-brand-400 transition">
+        API Docs
+      </a>
+      <div id="server-dot" class="w-2 h-2 rounded-full bg-slate-600" title="Server status"></div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 py-8 space-y-6">
+
+  <!-- ── INPUT CARD ── -->
+  <div class="bg-[#16162a] border border-slate-800 rounded-xl p-6">
+    <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Documentation URL</h2>
+
+    <div class="flex gap-3">
+      <div class="relative flex-1">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">🔗</span>
+        <input id="url-input" type="url"
+          placeholder="https://developer.ukg.com/wfm/reference/..."
+          class="w-full bg-[#0f0f1a] border border-slate-700 rounded-lg pl-9 pr-4 py-3 text-sm text-white placeholder-slate-600
+                 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition" />
+      </div>
+      <button id="crawl-btn"
+        class="px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-lg text-sm transition
+               disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap">
+        <span id="btn-icon">🚀</span>
+        <span id="btn-text">Start Crawl</span>
+      </button>
+    </div>
+
+    <!-- Options row -->
+    <div class="flex flex-wrap items-center gap-4 mt-4 pt-4 border-t border-slate-800">
+      <!-- Auto toggle -->
+      <label class="flex items-center gap-2 cursor-pointer select-none">
+        <div class="relative">
+          <input id="auto-toggle" type="checkbox" class="sr-only" checked />
+          <div class="w-10 h-5 bg-slate-700 rounded-full transition peer-checked:bg-brand-500" id="toggle-track"></div>
+          <div class="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform" id="toggle-thumb"></div>
+        </div>
+        <span class="text-sm text-slate-300">Auto-traverse <span class="text-slate-500">(recommended)</span></span>
+      </label>
+
+      <!-- Manual controls (hidden when auto) -->
+      <div id="manual-controls" class="hidden flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <label class="text-xs text-slate-500">Depth</label>
+          <input id="depth-input" type="number" value="3" min="1" max="10"
+            class="w-14 bg-[#0f0f1a] border border-slate-700 rounded px-2 py-1 text-sm text-white text-center
+                   focus:outline-none focus:ring-1 focus:ring-brand-500" />
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-xs text-slate-500">Max pages</label>
+          <input id="pages-input" type="number" value="100" min="10" max="2000"
+            class="w-20 bg-[#0f0f1a] border border-slate-700 rounded px-2 py-1 text-sm text-white text-center
+                   focus:outline-none focus:ring-1 focus:ring-brand-500" />
+        </div>
+      </div>
+
+      <!-- Vendor selector -->
+      <div class="flex items-center gap-2 ml-auto">
+        <label class="text-xs text-slate-500">Vendor</label>
+        <select id="vendor-select"
+          class="bg-[#0f0f1a] border border-slate-700 rounded px-3 py-1.5 text-sm text-slate-300
+                 focus:outline-none focus:ring-1 focus:ring-brand-500">
+          <option value="">Auto-detect</option>
+          <option value="ukg">UKG / Kronos</option>
+          <option value="workday">Workday</option>
+          <option value="adp">ADP</option>
+          <option value="dayforce">Dayforce</option>
+          <option value="toast">Toast</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROGRESS / LOG ── (hidden until crawl starts) -->
+  <div id="progress-card" class="hidden bg-[#16162a] border border-slate-800 rounded-xl p-6">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Crawl Progress</h2>
+      <div class="flex items-center gap-2">
+        <div id="status-badge" class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-400">queued</div>
+        <button id="cancel-btn" class="hidden text-xs text-red-400 hover:text-red-300 transition">✕ Cancel</button>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-3 gap-3 mb-4">
+      <div class="bg-[#0f0f1a] rounded-lg p-3 text-center">
+        <div id="stat-pages" class="text-2xl font-bold text-white">0</div>
+        <div class="text-xs text-slate-500 mt-0.5">Pages crawled</div>
+      </div>
+      <div class="bg-[#0f0f1a] rounded-lg p-3 text-center">
+        <div id="stat-endpoints" class="text-2xl font-bold text-white">0</div>
+        <div class="text-xs text-slate-500 mt-0.5">Endpoints found</div>
+      </div>
+      <div class="bg-[#0f0f1a] rounded-lg p-3 text-center">
+        <div id="stat-time" class="text-2xl font-bold text-white">0s</div>
+        <div class="text-xs text-slate-500 mt-0.5">Elapsed</div>
+      </div>
+    </div>
+
+    <!-- Log -->
+    <div class="relative">
+      <div class="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#16162a] to-transparent z-10 pointer-events-none rounded-t"></div>
+      <div id="log-container"
+        class="bg-[#0a0a14] rounded-lg p-4 h-52 overflow-y-auto font-mono text-xs space-y-1 scroll-smooth">
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESULTS ── (hidden until done) -->
+  <div id="results-card" class="hidden bg-[#16162a] border border-slate-800 rounded-xl p-6">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Results</h2>
+        <p id="result-summary" class="text-xs text-slate-500 mt-0.5"></p>
+      </div>
+      <!-- Download buttons -->
+      <div class="flex flex-wrap gap-2" id="download-buttons"></div>
+    </div>
+
+    <!-- Method summary bar -->
+    <div id="method-bar" class="flex gap-2 flex-wrap mb-5"></div>
+
+    <!-- Search + filter -->
+    <div class="flex gap-3 mb-3">
+      <div class="relative flex-1">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">🔍</span>
+        <input id="ep-search" type="text" placeholder="Search endpoints…"
+          class="w-full bg-[#0f0f1a] border border-slate-700 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder-slate-600
+                 focus:outline-none focus:ring-2 focus:ring-brand-500 transition" />
+      </div>
+      <div id="method-filters" class="flex gap-1"></div>
+    </div>
+
+    <!-- Endpoint table -->
+    <div class="bg-[#0a0a14] rounded-lg overflow-hidden border border-slate-800">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-800 text-xs text-slate-500 uppercase">
+            <th class="text-left px-4 py-2.5 w-24">Method</th>
+            <th class="text-left px-4 py-2.5">Path / Summary</th>
+            <th class="text-left px-4 py-2.5 hidden lg:table-cell w-24">Auth</th>
+            <th class="w-6"></th>
+          </tr>
+        </thead>
+        <tbody id="endpoint-tbody" class="divide-y divide-slate-800/50"></tbody>
+      </table>
+      <div id="ep-empty" class="hidden text-center py-8 text-slate-600 text-sm">No endpoints match your filter.</div>
+      <!-- detail rows render as siblings inside tbody -->
+      <div id="ep-count-bar" class="px-4 py-2 text-xs text-slate-600 border-t border-slate-800/50"></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── TOAST ── -->
+<div id="toast" class="fixed bottom-6 right-6 bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm
+                        shadow-xl text-white hidden transition-all z-50 max-w-sm"></div>
+
+<script>
+const API = '';   // same origin
+let sessionId = null;
+let pollInterval = null;
+let logInterval = null;
+let elapsedInterval = null;
+let startTime = null;
+let allEndpoints = [];
+let activeMethodFilter = null;
+
+// ── DOM refs ──
+const urlInput     = document.getElementById('url-input');
+const crawlBtn     = document.getElementById('crawl-btn');
+const btnText      = document.getElementById('btn-text');
+const btnIcon      = document.getElementById('btn-icon');
+const autoToggle   = document.getElementById('auto-toggle');
+const toggleTrack  = document.getElementById('toggle-track');
+const toggleThumb  = document.getElementById('toggle-thumb');
+const manualCtrls  = document.getElementById('manual-controls');
+const vendorSel    = document.getElementById('vendor-select');
+const depthInput   = document.getElementById('depth-input');
+const pagesInput   = document.getElementById('pages-input');
+const progressCard = document.getElementById('progress-card');
+const resultsCard  = document.getElementById('results-card');
+const statusBadge  = document.getElementById('status-badge');
+const logContainer = document.getElementById('log-container');
+const statPages    = document.getElementById('stat-pages');
+const statEndpoints= document.getElementById('stat-endpoints');
+const statTime     = document.getElementById('stat-time');
+const epTbody      = document.getElementById('endpoint-tbody');
+const epSearch     = document.getElementById('ep-search');
+const epEmpty      = document.getElementById('ep-empty');
+const epCountBar   = document.getElementById('ep-count-bar');
+const serverDot    = document.getElementById('server-dot');
+const methodBar    = document.getElementById('method-bar');
+const methodFilters= document.getElementById('method-filters');
+const downloadBtns = document.getElementById('download-buttons');
+const resultSummary= document.getElementById('result-summary');
+
+// ── Toggle ──
+autoToggle.addEventListener('change', () => {
+  const on = autoToggle.checked;
+  toggleTrack.style.background = on ? '#6366f1' : '';
+  toggleThumb.style.transform  = on ? 'translateX(20px)' : 'translateX(0)';
+  manualCtrls.classList.toggle('hidden', on);
+});
+// Init toggle state
+toggleTrack.style.background = '#6366f1';
+toggleThumb.style.transform  = 'translateX(20px)';
+
+// ── Server health check ──
+async function checkServer() {
+  try {
+    const r = await fetch(`${API}/health`);
+    if (r.ok) { serverDot.className = 'w-2 h-2 rounded-full bg-emerald-500'; serverDot.title = 'Server online'; }
+    else throw new Error();
+  } catch { serverDot.className = 'w-2 h-2 rounded-full bg-red-500'; serverDot.title = 'Server offline'; }
+}
+checkServer();
+setInterval(checkServer, 15000);
+
+// ── Crawl submit ──
+crawlBtn.addEventListener('click', startCrawl);
+urlInput.addEventListener('keydown', e => { if (e.key === 'Enter') startCrawl(); });
+
+async function startCrawl() {
+  const url = urlInput.value.trim();
+  if (!url) return showToast('Please enter a documentation URL', 'error');
+  if (!url.startsWith('http')) return showToast('URL must start with http:// or https://', 'error');
+
+  const body = {
+    url,
+    auto: autoToggle.checked,
+    vendor: vendorSel.value || null,
+  };
+  if (!autoToggle.checked) {
+    body.max_depth = parseInt(depthInput.value) || 3;
+    body.max_pages = parseInt(pagesInput.value) || 100;
+  }
+
+  setBtnLoading(true);
+  progressCard.classList.remove('hidden');
+  resultsCard.classList.add('hidden');
+  logContainer.innerHTML = '';
+  allEndpoints = [];
+  startTime = Date.now();
+
+  try {
+    const res = await fetch(`${API}/crawl`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail?.[0]?.msg || data.detail || 'Unknown error');
+    sessionId = data.session_id;
+    showToast('Crawl started ✓', 'success');
+    startPolling();
+  } catch (e) {
+    showToast(e.message, 'error');
+    setBtnLoading(false);
+  }
+}
+
+// ── Polling ──
+function startPolling() {
+  clearIntervals();
+  elapsedInterval = setInterval(updateElapsed, 1000);
+  pollInterval = setInterval(pollStatus, 3000);
+  logInterval  = setInterval(pollLog, 2000);
+  pollStatus();
+  pollLog();
+}
+
+function clearIntervals() {
+  clearInterval(pollInterval);
+  clearInterval(logInterval);
+  clearInterval(elapsedInterval);
+}
+
+async function pollStatus() {
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/status/${sessionId}`);
+    const d = await r.json();
+    updateStatusUI(d);
+    if (d.status === 'done') {
+      clearIntervals();
+      setBtnLoading(false);
+      await pollLog();           // flush final log
+      await loadEndpoints();
+      showDownloadButtons();
+      showToast(`Done! ${d.endpoint_count} endpoints found.`, 'success');
+    } else if (d.status === 'failed') {
+      clearIntervals();
+      setBtnLoading(false);
+      showToast('Crawl failed: ' + (d.error || 'unknown error'), 'error');
+    }
+  } catch {}
+}
+
+async function pollLog() {
+  if (!sessionId) return;
+  try {
+    const r = await fetch(`${API}/status/${sessionId}/log`);
+    const d = await r.json();
+    renderLog(d.log || []);
+  } catch {}
+}
+
+let lastLogCount = 0;
+function renderLog(lines) {
+  const newLines = lines.slice(lastLogCount);
+  newLines.forEach(line => {
+    const div = document.createElement('div');
+    div.className = 'log-line text-slate-400 leading-relaxed';
+    const isError = line.toLowerCase().includes('error');
+    const isDone  = line.toLowerCase().includes('done') || line.toLowerCase().includes('complete');
+    if (isError) div.className += ' text-red-400';
+    else if (isDone) div.className += ' text-emerald-400 font-medium';
+    div.innerHTML = `<span class="text-slate-600 mr-2">${String(lastLogCount + newLines.indexOf(line) + 1).padStart(3,'0')}</span>${escHtml(line)}`;
+    logContainer.appendChild(div);
+  });
+  lastLogCount = lines.length;
+  if (newLines.length) logContainer.scrollTop = logContainer.scrollHeight;
+}
+
+function updateStatusUI(d) {
+  statPages.textContent     = d.pages_visited || 0;
+  statEndpoints.textContent = d.endpoint_count || 0;
+
+  const s = d.status;
+  const colors = {
+    queued:  'bg-slate-800 text-slate-400',
+    running: 'bg-blue-900/50 text-blue-300',
+    done:    'bg-emerald-900/50 text-emerald-300',
+    failed:  'bg-red-900/50 text-red-300',
+  };
+  statusBadge.className = `px-2.5 py-0.5 rounded-full text-xs font-medium ${colors[s] || colors.queued}`;
+  const icons = { queued:'⏳', running:'⚡', done:'✅', failed:'❌' };
+  statusBadge.textContent = (icons[s] || '') + ' ' + s;
+}
+
+function updateElapsed() {
+  if (!startTime) return;
+  const secs = Math.floor((Date.now() - startTime) / 1000);
+  statTime.textContent = secs < 60 ? `${secs}s` : `${Math.floor(secs/60)}m ${secs%60}s`;
+}
+
+// ── Endpoints ──
+async function loadEndpoints() {
+  const r = await fetch(`${API}/endpoints/${sessionId}`);
+  const d = await r.json();
+  allEndpoints = d.endpoints || [];
+  renderEndpoints(allEndpoints);
+  renderMethodBar();
+  renderMethodFilters();
+  resultsCard.classList.remove('hidden');
+
+  const statusR = await fetch(`${API}/status/${sessionId}`);
+  const sd = await statusR.json();
+  resultSummary.textContent =
+    `${sd.pages_visited} pages crawled · ${allEndpoints.length} unique endpoints · ${sd.doc_type?.replace('DocType.','') || ''}`;
+}
+
+function renderEndpoints(eps) {
+  const query = (epSearch.value || '').toLowerCase();
+  const filtered = eps.filter(ep =>
+    (!activeMethodFilter || ep.method === activeMethodFilter) &&
+    (!query || ep.path.toLowerCase().includes(query) ||
+     (ep.summary||'').toLowerCase().includes(query) ||
+     (ep.description||'').toLowerCase().includes(query))
+  );
+
+  epTbody.innerHTML = '';
+  epEmpty.classList.toggle('hidden', filtered.length > 0);
+
+  filtered.forEach(ep => {
+    // ── Main row ──
+    const tr = document.createElement('tr');
+    tr.className = 'ep-row transition border-b border-slate-800/50';
+    const hasDetail = ep.description || Object.keys(ep.responses||{}).length || ep.request_body || (ep.parameters||[]).length;
+    tr.innerHTML = `
+      <td class="px-4 py-3">
+        <span class="badge-${ep.method} px-2 py-0.5 rounded text-xs font-mono font-bold">${ep.method}</span>
+      </td>
+      <td class="px-4 py-3">
+        <div class="flex flex-col gap-0.5">
+          <code class="text-slate-200 text-xs break-all">${escHtml(ep.path)}</code>
+          ${ep.summary ? `<span class="text-slate-500 text-xs">${escHtml(ep.summary)}</span>` : ''}
+        </div>
+      </td>
+      <td class="px-4 py-3 hidden lg:table-cell">
+        ${ep.auth_type !== 'unknown' && ep.auth_type !== 'none'
+          ? `<span class="text-xs px-1.5 py-0.5 rounded bg-amber-900/40 text-amber-300 border border-amber-800/50">${ep.auth_type}</span>`
+          : '<span class="text-xs text-slate-700">—</span>'}
+      </td>
+      <td class="px-3 py-3 text-right w-6">
+        <span class="text-slate-600 text-xs expand-icon">▶</span>
+      </td>`;
+
+    // ── Detail row — hidden with inline style so Tailwind can't override ──
+    const detailTr = document.createElement('tr');
+    detailTr.style.display = 'none';
+    detailTr.innerHTML = `<td colspan="4" class="detail-panel px-6 py-5">
+      ${buildDetailPanel(ep)}
+    </td>`;
+
+    tr.addEventListener('click', () => {
+      const isOpen = detailTr.style.display === 'table-row';
+      detailTr.style.display = isOpen ? 'none' : 'table-row';
+      tr.classList.toggle('expanded', !isOpen);
+      const icon = tr.querySelector('.expand-icon');
+      if (icon) icon.textContent = isOpen ? '▶' : '▼';
+    });
+
+    epTbody.appendChild(tr);
+    epTbody.appendChild(detailTr);
+  });
+
+  epCountBar.textContent = `Showing ${filtered.length} of ${eps.length} endpoints · click a row to expand`;
+}
+
+function buildDetailPanel(ep) {
+  let html = `<div class="flex justify-between items-start mb-3">`;
+
+  // H1 — endpoint title
+  if (ep.summary) {
+    html += `<h3 class="text-white font-semibold text-sm">${escHtml(ep.summary)}</h3>`;
+  } else {
+    html += `<span></span>`;
+  }
+  html += `<span class="text-xs text-slate-600 hover:text-slate-400 cursor-pointer select-none ml-4 shrink-0">▲ collapse</span></div>`;
+
+  // Description paragraph
+  if (ep.description) {
+    html += `<p class="text-slate-400 text-xs leading-relaxed mb-4 max-w-3xl">${escHtml(ep.description)}</p>`;
+  }
+
+  const sections = [];
+
+  // Parameters
+  const params = (ep.parameters || []).filter(p => p.name);
+  if (params.length) {
+    let table = `<div class="mb-4">
+      <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Parameters</div>
+      <table class="w-full text-xs border-collapse">
+        <thead><tr class="text-slate-600 border-b border-slate-800">
+          <th class="text-left py-1 pr-4 font-medium">Name</th>
+          <th class="text-left py-1 pr-4 font-medium">In</th>
+          <th class="text-left py-1 pr-4 font-medium">Type</th>
+          <th class="text-left py-1 pr-4 font-medium">Required</th>
+          <th class="text-left py-1 font-medium">Description</th>
+        </tr></thead><tbody>`;
+    params.forEach(p => {
+      table += `<tr class="border-b border-slate-800/30">
+        <td class="py-1 pr-4 font-mono text-brand-400">${escHtml(p.name)}</td>
+        <td class="py-1 pr-4 text-slate-500">${escHtml(p.location||p.in||'')}</td>
+        <td class="py-1 pr-4 text-slate-400">${escHtml(p.type||'string')}</td>
+        <td class="py-1 pr-4">${p.required ? '<span class="text-red-400">yes</span>' : '<span class="text-slate-600">no</span>'}</td>
+        <td class="py-1 text-slate-500">${escHtml(p.description||'')}</td>
+      </tr>`;
+    });
+    table += `</tbody></table></div>`;
+    sections.push(table);
+  }
+
+  // Request body example
+  if (ep.request_body) {
+    const rb = ep.request_body;
+    const example = rb.example || extractSchemaExample(rb.schema);
+    sections.push(`<div class="mb-4">
+      <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+        Request Body <span class="text-slate-700 normal-case font-normal">${escHtml(rb.content_type||'application/json')}</span>
+        ${rb.required ? '<span class="ml-1 text-red-400 text-xs">required</span>' : ''}
+      </div>
+      ${rb.description ? `<p class="text-slate-500 text-xs mb-2">${escHtml(rb.description)}</p>` : ''}
+      <div class="json-block">${escHtml(JSON.stringify(example, null, 2))}</div>
+    </div>`);
+  }
+
+  // Responses
+  const responses = ep.responses || {};
+  const resCodes = Object.keys(responses);
+  if (resCodes.length) {
+    let resHtml = `<div class="mb-2">
+      <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Responses</div>
+      <div class="space-y-3">`;
+    resCodes.forEach(code => {
+      const res = responses[code];
+      const color = code.startsWith('2') ? 'text-emerald-400' : code.startsWith('4') ? 'text-red-400' : 'text-slate-400';
+      const example = res.example || extractSchemaExample(res.schema);
+      resHtml += `<div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="font-mono font-bold text-xs ${color}">${escHtml(code)}</span>
+          <span class="text-slate-500 text-xs">${escHtml(res.description||'')}</span>
+        </div>
+        ${example && Object.keys(example).length ? `<div class="json-block">${escHtml(JSON.stringify(example, null, 2))}</div>` : ''}
+      </div>`;
+    });
+    resHtml += `</div></div>`;
+    sections.push(resHtml);
+  }
+
+  if (sections.length) {
+    html += `<div class="grid gap-4 mt-2">${sections.join('')}</div>`;
+  }
+
+  if (!html) html = `<p class="text-slate-600 text-xs italic">No additional details available.</p>`;
+  return html;
+}
+
+function extractSchemaExample(schema) {
+  if (!schema) return null;
+  if (schema.example !== undefined) return schema.example;
+  if (schema.type === 'object' || schema.properties) {
+    const out = {};
+    for (const [k, v] of Object.entries(schema.properties || {})) {
+      out[k] = extractSchemaExample(v) ?? (v.type === 'integer' ? 0 : v.type === 'boolean' ? true : v.type === 'array' ? [] : 'string');
+    }
+    return Object.keys(out).length ? out : null;
+  }
+  if (schema.type === 'array') return schema.items ? [extractSchemaExample(schema.items)] : [];
+  return null;
+}
+
+function renderMethodBar() {
+  const counts = {};
+  allEndpoints.forEach(ep => counts[ep.method] = (counts[ep.method]||0) + 1);
+  methodBar.innerHTML = Object.entries(counts).sort().map(([m, n]) =>
+    `<div class="badge-${m} px-3 py-1 rounded-full text-xs font-bold">${m} <span class="opacity-70">${n}</span></div>`
+  ).join('');
+}
+
+function renderMethodFilters() {
+  const methods = [...new Set(allEndpoints.map(e => e.method))].sort();
+  methodFilters.innerHTML = '<button onclick="setMethodFilter(null)" class="text-xs px-2 py-1 rounded border border-slate-700 text-slate-400 hover:border-brand-500 transition" id="filter-all">All</button>';
+  methods.forEach(m => {
+    const btn = document.createElement('button');
+    btn.textContent = m;
+    btn.className = `badge-${m} text-xs px-2 py-1 rounded font-bold hover:opacity-80 transition`;
+    btn.onclick = () => setMethodFilter(m);
+    methodFilters.appendChild(btn);
+  });
+}
+
+function setMethodFilter(method) {
+  activeMethodFilter = method;
+  renderEndpoints(allEndpoints);
+}
+
+epSearch.addEventListener('input', () => renderEndpoints(allEndpoints));
+
+// ── Download buttons ──
+function showDownloadButtons() {
+  const formats = [
+    { key: 'openapi',   label: '📄 OpenAPI YAML', color: 'bg-emerald-700 hover:bg-emerald-600' },
+    { key: 'swagger',   label: '📦 Swagger JSON',  color: 'bg-blue-700 hover:bg-blue-600' },
+    { key: 'postman',   label: '🚀 Postman',        color: 'bg-orange-700 hover:bg-orange-600' },
+    { key: 'inventory', label: '📋 Inventory',      color: 'bg-purple-700 hover:bg-purple-600' },
+    { key: 'report',    label: '📊 Report',         color: 'bg-slate-700 hover:bg-slate-600' },
+  ];
+  downloadBtns.innerHTML = formats.map(f => `
+    <a href="${API}/export/${sessionId}/${f.key}" download
+       class="${f.color} text-white text-xs font-medium px-3 py-1.5 rounded-md transition whitespace-nowrap">
+      ${f.label}
+    </a>`).join('');
+}
+
+// ── Helpers ──
+function setBtnLoading(loading) {
+  crawlBtn.disabled = loading;
+  btnText.textContent = loading ? 'Crawling…' : 'Start Crawl';
+  btnIcon.textContent = loading ? '⏳' : '🚀';
+}
+
+function showToast(msg, type = 'info') {
+  const toast = document.getElementById('toast');
+  const colors = { success: 'border-emerald-700 bg-emerald-900/80', error: 'border-red-700 bg-red-900/80', info: '' };
+  toast.className = `fixed bottom-6 right-6 border rounded-lg px-4 py-3 text-sm shadow-xl text-white z-50 max-w-sm ${colors[type]}`;
+  toast.textContent = msg;
+  toast.classList.remove('hidden');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.add('hidden'), 4000);
+}
+
+function escHtml(str) {
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+lastLogCount = 0;
+</script>
+</body>
+</html>

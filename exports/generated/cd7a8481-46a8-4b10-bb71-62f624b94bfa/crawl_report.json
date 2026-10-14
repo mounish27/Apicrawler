@@ -1,0 +1,32 @@
+{
+  "session_id": "cd7a8481-46a8-4b10-bb71-62f624b94bfa",
+  "url": "https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api",
+  "doc_type": "DocType.STATIC_HTML",
+  "pages_crawled": 10,
+  "endpoints_found": 12,
+  "auth_type": "bearer",
+  "has_graphql": false,
+  "title": "Welcome to the UKG Pro Workforce Management API",
+  "servers": [],
+  "status_log": [
+    "Starting crawl pipeline...",
+    "Probing for OpenAPI/Swagger spec...",
+    "Scoping crawl to path prefix: /wfm/reference/",
+    "Fetching entry page...",
+    "Starting Playwright crawl [max_depth=3, max_pages=10]...",
+    "Crawling (1) https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workfor...",
+    "Crawling (2) https://developer.ukg.com/wfm/reference/wfm-webhook-events...",
+    "Crawling (3) https://developer.ukg.com/wfm/reference/active-team-members...",
+    "Crawling (4) https://developer.ukg.com/wfm/reference/retrieve-active-team-members...",
+    "Crawling (5) https://developer.ukg.com/wfm/reference/activity...",
+    "Crawling (6) https://developer.ukg.com/wfm/reference/retrieve-activity-by-name...",
+    "Crawling (7) https://developer.ukg.com/wfm/reference/create-activity...",
+    "Crawling (8) https://developer.ukg.com/wfm/reference/retrieve-activity-export-defin...",
+    "Crawling (9) https://developer.ukg.com/wfm/reference/create-activities...",
+    "Crawling (10) https://developer.ukg.com/wfm/reference/delete-activities...",
+    "Safety ceiling reached (10 pages). Stopping.",
+    "Crawled 10 page(s). Parsing...",
+    "Extracted 18 raw endpoints. Normalizing...",
+    "12 unique endpoints after dedup. Generating specs..."
+  ]
+}

@@ -1,0 +1,628 @@
+{
+  "session_id": "3aef394b-387b-4825-aa67-224bcc4f9a2d",
+  "source_url": "https://help.dayforce.com/r/documents/Dayforce-RESTful-Web-Services-Developer-Guide/RESTful-Retrieve-Department-Data",
+  "doc_type": "DocType.STATIC_HTML",
+  "total_endpoints": 62,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/V1/OrgUnits",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Departments",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Jobs",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ClientMetadata",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/ClientMetadata",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening/BillingCode",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening/Package",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening/CandidateRightToWorkResults",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening/PersonalIdentifiableInformation",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening/AdjudicationStatus",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/BackgroundScreening/Status",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/Employees",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Employees",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/Employees/abc123",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Positions",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/ContactInformationTypes",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/Documents",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/Documents/{DocumentId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{employeeXRefCode}/EmployeeAvailability",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{employeeXRefCode/EmployeeAvailability",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/EmployeeRawPunches",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Employees/{xRefCode}/Availability",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Employees/{xRefCode}/Schedules",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Employees/{xRefCode}/TimeAwayFromWork",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/EmployeePunches",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/EmployeePaySummaries",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/EmployeePayAdjustments",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/EmployeeSchedules",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/EmployeePayrollTax",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LaborMetrics/xRefCode",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LaborMetricTypes/xRefCode",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LaborMetrics",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LaborMetricTypes",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/LegacyLaborMetric",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Projects",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Projects/xRefCode",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeeBalancePeriods",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeeBalanceTransactions",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeePaySummaries",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeePayAdjustments",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/JobStepRate",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeePaySummariesRetro",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ReportMetadata",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/I9Orders",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/I9Orders",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/I9Orders/{I9OrderId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/JobFeeds",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/JobFeeds",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/JobPostingQuestionnaires",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/KpiData",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/PlanTargets",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/OperatingHours/GetOperatingHours",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/OperatingHours/PostOperatingHoursException",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/OperatingHours/PatchOperatingHoursException",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/OperatingHours",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeePunches",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeePunches/{xRefCode}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/EmployeeSchedules",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Reports/Payroll_Earning_Hours_Detail",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/Reports/{reportXRefCode}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/jobfeeds",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    }
+  ]
+}

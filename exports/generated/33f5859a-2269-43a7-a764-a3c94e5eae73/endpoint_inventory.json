@@ -1,0 +1,158 @@
+{
+  "session_id": "33f5859a-2269-43a7-a764-a3c94e5eae73",
+  "source_url": "https://help.dayforce.com/r/documents/Dayforce-RESTful-Web-Services-Developer-Guide/RESTful-Retrieve-Department-Data",
+  "doc_type": "DocType.STATIC_HTML",
+  "total_endpoints": 15,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/V1/{V1Id}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Jobs",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/{v1Id}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{V1Id}/{V1IdId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{V1Id}/Package",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{V1Id}/Status",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/{v1Id}/abc123",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/{v1Id}/{v1IdId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{employeeXRefCode}/{employeeXRefCodeId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{employeeXRefCode/{employeeXRefCodeId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{V1Id}/{xRefCode}/{xRefCodeId}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/KpiData",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/{V1Id}/{xRefCode}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/V1/Reports/Payroll_Earning_Hours_Detail",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v1/Reports/{reportXRefCode}",
+      "summary": null,
+      "tags": [
+        "dayforce"
+      ],
+      "auth_type": "bearer",
+      "deprecated": false
+    }
+  ]
+}

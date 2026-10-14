@@ -1,0 +1,104 @@
+{
+  "session_id": "cd7a8481-46a8-4b10-bb71-62f624b94bfa",
+  "source_url": "https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api",
+  "doc_type": "DocType.STATIC_HTML",
+  "total_endpoints": 12,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/{v1Id}/setup/break_rules/{id}",
+      "summary": null,
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_create",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_upsert",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_delete",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/{workId}/{id}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_read",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/exports/apply_read",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/{workId}/{id}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/{workId}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_update",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/{workId}/{id}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    }
+  ]
+}

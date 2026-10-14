@@ -1,0 +1,23 @@
+{
+  "session_id": "a77b77ce-3ffd-43f5-a4c6-98fcccd31d97",
+  "url": "https://petstore.swagger.io",
+  "doc_type": "DocType.OPENAPI_SPEC",
+  "pages_crawled": 1,
+  "endpoints_found": 20,
+  "auth_type": "api_key",
+  "has_graphql": false,
+  "title": "Swagger Petstore",
+  "servers": [],
+  "status_log": [
+    "Starting crawl pipeline...",
+    "Probing for OpenAPI/Swagger spec...",
+    "Fetching entry page...",
+    "Starting crawl [max_depth=1, max_pages=3, concurrency=10]...",
+    "Crawling (1) https://petstore.swagger.io...",
+    "OpenAPI spec intercepted - stopping crawl.",
+    "Crawl complete. 1 pages in 23s.",
+    "Crawled 1 page(s). Parsing...",
+    "Extracted 20 raw endpoints. Normalizing...",
+    "20 unique endpoints after dedup. Generating specs..."
+  ]
+}

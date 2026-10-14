@@ -1,0 +1,208 @@
+{
+  "session_id": "a77b77ce-3ffd-43f5-a4c6-98fcccd31d97",
+  "source_url": "https://petstore.swagger.io",
+  "doc_type": "DocType.OPENAPI_SPEC",
+  "total_endpoints": 20,
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/v2/pet/{petId}/uploadImage",
+      "summary": "uploads an image",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v2/pet",
+      "summary": "Add a new pet to the store",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/v2/pet",
+      "summary": "Update an existing pet",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/pet/findByStatus",
+      "summary": "Finds Pets by status",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/pet/findByTags",
+      "summary": "Finds Pets by tags",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": true
+    },
+    {
+      "method": "GET",
+      "path": "/v2/pet/{petId}",
+      "summary": "Find pet by ID",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "api_key",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v2/pet/{petId}",
+      "summary": "Updates a pet in the store with form data",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/pet/{petId}",
+      "summary": "Deletes a pet",
+      "tags": [
+        "pet"
+      ],
+      "auth_type": "oauth2",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/store/inventory",
+      "summary": "Returns pet inventories by status",
+      "tags": [
+        "store"
+      ],
+      "auth_type": "api_key",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v2/store/order",
+      "summary": "Place an order for a pet",
+      "tags": [
+        "store"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/store/order/{orderId}",
+      "summary": "Find purchase order by ID",
+      "tags": [
+        "store"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/store/order/{orderId}",
+      "summary": "Delete purchase order by ID",
+      "tags": [
+        "store"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v2/user/createWithList",
+      "summary": "Creates list of users with given input array",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/user/{username}",
+      "summary": "Get user by user name",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/v2/user/{username}",
+      "summary": "Updated user",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/v2/user/{username}",
+      "summary": "Delete user",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/user/login",
+      "summary": "Logs user into the system",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/v2/user/logout",
+      "summary": "Logs out current logged in user session",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v2/user/createWithArray",
+      "summary": "Creates list of users with given input array",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/v2/user",
+      "summary": "Create user",
+      "tags": [
+        "user"
+      ],
+      "auth_type": "none",
+      "deprecated": false
+    }
+  ]
+}

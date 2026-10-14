@@ -1,0 +1,1567 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RESTful Add and Update Org Units",
+    "version": "1.0.0"
+  },
+  "host": "help.dayforce.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/V1/OrgUnits": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_OrgUnitsResponse200"
+            }
+          }
+        },
+        "summary": "RESTful Get Org Unit XRefCodes",
+        "description": "The GET OrgUnit XRefCodes request allows the consuming application to retrieve a list of org unit XRefCodes. This request returns only a list of XRefCodes and is the first step in a two-step process that includes a GET OrgUnits By XRefCodes request. See RESTful Get Org Unit Details .",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Org Unit Data",
+        "description": "Dayforce RESTful services use the POST verb to create an org unit.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Org Unit Data",
+        "description": "Dayforce RESTful services use the PATCH verb to update org units.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Departments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "RESTful Get Department XRefCodes",
+        "description": "The GET Departments XRefCodes request allows the consuming application to retrieve a list of  XRefCodes for departments. This request returns only a list of XRefCodes and is the first step in a two-step process that includes a GET Departments By XRefCodes request. See RESTful Get Department Details .",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Department Data",
+        "description": "Dayforce RESTful services use the POST verb to create a department.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Department Data",
+        "description": "Dayforce RESTful services use the PATCH verb to update departments.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Jobs": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "RESTful Get Job XRefCodes",
+        "description": "The GET Jobs XRefCodes request allows the consuming application to retrieve a list of  XRefCodes for jobs. This request returns only a list of XRefCodes and is the first step in a two-step process that includes a GET Jobs By XRefCodes request. See RESTful Get Job Details .",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Job Data",
+        "description": "Dayforce RESTful services use the POST verb to create a job.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Job Data",
+        "description": "Dayforce RESTful services use the PATCH verb to update jobs.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/ClientMetadata": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "Determine Which URL to Use",
+        "description": "Dayforce hosts multiple versions of this service to support multiple clients. All clients use the same URL, and Dayforce issues an HTTP redirect on every request to ensure that your request is processed with the correct service.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/PersonalIdentifiableInformation": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Candidate Background Screening Personal Identifiable Information",
+        "description": "Patch Candidate Background Screening Personal Identifiable Information (PII) to Dayforce . It enables the provider to update the candidate PII to Dayforce .",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ScreeningRequestId*",
+            "in": "query",
+            "required": false,
+            "type": "n/a",
+            "description": "String"
+          },
+          {
+            "name": "CandidatePII*",
+            "in": "query",
+            "required": false,
+            "type": "candidatepii object",
+            "description": "String"
+          },
+          {
+            "name": "SocialSecurityNumber",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate Social Security number."
+          },
+          {
+            "name": "SocialInsuranceNumber",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate Social Insurance Number."
+          },
+          {
+            "name": "DriverLicense",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate driver license."
+          }
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/AdjudicationStatus": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Candidate Background Screening Adjudication Status",
+        "description": "Patch Candidate Background Screening Adjudication Status to Dayforce . Candidate Background Screening Adjudication Status is displayed on the candidate grid as part of the Screening Order Field. It is displayed side by side with the Background Screening Status.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ScreeningRequestId*",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Dayforcecandidate background screening reference"
+          },
+          {
+            "name": "AdjudicationStatus*",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate background screening adjudication status"
+          }
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/Status": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Candidate Background Screening Status",
+        "description": "Patch Candidate Background Screening Status to Dayforce . Candidate Background Screening Status is displayed on the candidate grid as part of the Screening Order Field.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ScreeningRequestId*",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Dayforcecandidate background screening reference"
+          },
+          {
+            "name": "ScreeningStatus*",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate background screening order status"
+          }
+        ]
+      }
+    },
+    "/V1/Employees": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST and PATCH Employee Subordinate Resources",
+        "description": "You can use the POST and PATCH HTTP verbs to add and update employee HR data in Dayforce . There are a number of subordinate resources that you can use to insert and update employee HR data in Dayforce . The URL for the subordinate calls is constructed as follows:",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Positions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "RESTful Get Position XRefCodes",
+        "description": "The GET Positions XRefCodes request allows the consuming application to retrieve a list of  XRefCodes for positions. This request returns only a list of XRefCodes and is the first step in a two-step process that includes a GET Positions By XRefCodes request. See RESTful Get Position Details .",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Position Data",
+        "description": "Dayforce RESTful services use the POST verb to create a position.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Position Data",
+        "description": "Dayforce RESTful services use the PATCH verb to update positions.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/ContactInformationTypes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "RESTful Get HR\u00a0Admin XRefCodes",
+        "description": "The following requests allow the consuming application to retrieve a list of  XRefCodes for HR Admin subfeatures:",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/{employeeXRefCode}/EmployeeAvailability": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Availability",
+        "description": "Dayforce RESTful services use the POST verb to create an instance of the resource.  In the case of the Availability resource, POST refers to creating a new availability record for an employee.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "employeeXRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Post_V1_employeeXRefCode_EmployeeAvailabilityBody"
+            }
+          }
+        ]
+      }
+    },
+    "/V1/LaborMetrics/xRefCode": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_LaborMetrics_xRefCodeResponse200"
+            }
+          }
+        },
+        "summary": "RESTful Get Labor Metrics XRefCodes",
+        "description": "This GET operation returns the details of a specific labor metric code based on the XRefCode you enter. The operation uses the following URL:",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LaborMetricTypes/xRefCode": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_LaborMetricTypes_xRefCodeResponse200"
+            }
+          }
+        },
+        "summary": "RESTful Get Labor Metric Type XRefCodes",
+        "description": "This GET operation returns the details of a specific labor metric type based on the XRefCode you enter. The operation uses the following URL:",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LaborMetrics": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Labor Metrics",
+        "description": "Dayforce RESTful services use the POST verb to create an instance of the resource.  In the case of the Labor Metrics resource, POST refers to creating a new labor metric code.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Post_V1_LaborMetricsBody"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Labor Metrics",
+        "description": "Dayforce RESTful services use the PATCH verb to update labor metric codes.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Patch_V1_LaborMetricsBody"
+            }
+          }
+        ]
+      }
+    },
+    "/V1/LaborMetricTypes": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Labor Metric Types",
+        "description": "Dayforce RESTful services use the POST verb to create an instance of the resource.  In the case of the Labor Metric Types resource, POST refers to creating a new labor metric type.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Post_V1_LaborMetricTypesBody"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Labor Metric Types",
+        "description": "Dayforce RESTful services use the PATCH verb to update labor metric types.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Patch_V1_LaborMetricTypesBody"
+            }
+          }
+        ]
+      }
+    },
+    "/V1/LegacyLaborMetric": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_LegacyLaborMetricResponse200"
+            }
+          }
+        },
+        "summary": "RESTful Get Legacy Labor Metrics",
+        "description": "This GET operation returns the details of a specific legacy labor metric. The operation uses the following URL:",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "RESTful Delete Legacy Labor Metrics",
+        "description": "This DELETE operation deletes a specific legacy labor metric. The operation uses the following URL:",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Legacy Labor Metrics",
+        "description": "Dayforce RESTful services use the POST verb to create an instance of the resource.  In the case of the Legacy Labor Metric resource, POST refers to creating a new legacy labor metric.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Post_V1_LegacyLaborMetricBody"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Legacy Labor Metrics",
+        "description": "Dayforce RESTful services use the PATCH verb to update legacy labor metrics.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Patch_V1_LegacyLaborMetricBody"
+            }
+          }
+        ]
+      }
+    },
+    "/V1/Projects": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Projects Data",
+        "description": "Dayforce RESTful services use the POST verb to create an instance of the resource.  In the case of the Projects resource, POST refers to creating a new project.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Post_V1_ProjectsBody"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Projects Data",
+        "description": "Dayforce RESTful services use the PATCH verb to update projects.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Patch_V1_ProjectsBody"
+            }
+          }
+        ]
+      }
+    },
+    "/V1/EmployeeBalancePeriods": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_EmployeeBalancePeriodsResponse200"
+            }
+          }
+        },
+        "summary": "Get Employee Balance Periods",
+        "description": "This request is used to get a list of an employee's entitlement balances.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeeBalanceTransactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_EmployeeBalanceTransactionsResponse200"
+            }
+          }
+        },
+        "summary": "Get Employee Balance Transactions",
+        "description": "Balance transactions represent instances when employees earned and used their balances (for example, balances used by time away from work or incremented by entitlement policies).",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Employee Balance Transactions",
+        "description": "Dayforce RESTful services use the POST verb to create an employee balance transaction.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Employee Balance Transactions",
+        "description": "Dayforce RESTful services use the PATCH verb to update employee balance transactions.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePaySummaries": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_EmployeePaySummariesResponse200"
+            }
+          }
+        },
+        "summary": "RESTful Get Employee Pay Summaries",
+        "description": "The Get Employee Pay Summaries request allows the consuming application to retrieve employee pay summaries by using the employee XRefCode.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePayAdjustments": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Employee Pay Adjustment Data",
+        "description": "Dayforce RESTful services use the POST verb to create a pay adjustment.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Employee Pay Adjustment Data",
+        "description": "Dayforce RESTful services use the PATCH verb to update employee pay adjustments.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/JobFeeds": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Get_V1_JobFeedsResponse200"
+            }
+          }
+        },
+        "summary": "RESTful Get Job Postings",
+        "description": "Get Job Postings is used to share career site postings in Dayforce with external job boards. Job board providers use this endpoint to obtain job posting data.",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/JobPostingQuestionnaires": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "RESTful POST Candidate Sourcing",
+        "description": "Client properties : Recruiting Setup > Client Properties > Allow Candidates and Job Application Sourcing from External Job Boards",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePunches": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Employee Punches",
+        "description": "This POST operation adds an employee time entry. The operation uses the following URL:",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "isValidateOnly",
+            "in": "query",
+            "required": false,
+            "type": "this parameter is used to specify that all of the validations need to be performed without committing any changes. use this parameter to control whether committing information in yourdayforceinstance is your responsibility.the url\u00a0syntax is:https://www.dayforcehcm.com/api/companyname/v1/employeepunches?isvalidateonly=true"
+          }
+        ]
+      }
+    },
+    "/V1/EmployeePunches/{xRefCode}": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Employee Punches",
+        "description": "This PATCH operation updates an employee time entry. The operation uses the following URL:",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "xRefCode",
+            "in": "query",
+            "required": false,
+            "type": "the xrefcode of the time entry that you want to update."
+          },
+          {
+            "name": "isValidateOnly",
+            "in": "query",
+            "required": false,
+            "type": "this parameter is used to specify that all of the validations need to be performed without committing any changes. use this parameter to control whether committing information in yourdayforceinstance is your responsibility.the url\u00a0syntax is:https://www.dayforcehcm.com/api/companyname/v1/employeepunches/{xrefcode}?isvalidateonly=true"
+          }
+        ]
+      }
+    },
+    "/V1/EmployeeSchedules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Employee Schedules",
+        "description": "Dayforce RESTful services use the POST\u00a0endpoint to create an instance of the resource.  In the case of the EmployeeSchedules resource, POST refers to creating a new employee schedule.",
+        "tags": [
+          "dayforce"
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Employee Schedules",
+        "description": "Dayforce RESTful services use the PATCH endpoint to create an instance of the resource.  In the case of the Employee Schedules resource, PATCH\u00a0 refers to creating new shifts.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Patch_V1_EmployeeSchedulesBody"
+            }
+          }
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/BillingCode": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Background Screening Billing Codes",
+        "description": "POST Background Screening Billing Codes endpoint enables the provider to send a list of Billing Codes to Dayforce . The provider can also send the list of associated packages (if any) together.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ProviderReference*",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Provider Unique Identifier."
+          }
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/Package": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "POST Background Screening Packages",
+        "description": "POST Background Screening Packages endpoint enables the provider to send a list of packages to Dayforce . The provider can also send the list of associated billing codes (if any) together.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ProviderReference*",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Provider unique identifier"
+          }
+        ]
+      }
+    },
+    "/V1/BackgroundScreening": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Post_V1_BackgroundScreeningResponse200"
+            }
+          }
+        },
+        "summary": "POST Background Screening Provider Statuses",
+        "description": "POST Background Screening Provider Statuses endpoint enables the provider to send background screening statuses  to Dayforce .",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ProviderReference",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Provider unique identifier"
+          },
+          {
+            "name": "OrderStatuses",
+            "in": "query",
+            "required": false,
+            "type": "list of strings",
+            "description": "List of strings of the screening order statuses"
+          },
+          {
+            "name": "AdjudicationStatuses",
+            "in": "query",
+            "required": false,
+            "type": "list of strings",
+            "description": "List of strings of the screening adjudication statuses"
+          },
+          {
+            "name": "ResultStatuses",
+            "in": "query",
+            "required": false,
+            "type": "list of strings",
+            "description": "List of strings of the screening result statuses"
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Candidate Background Screening",
+        "description": "Patch Candidate Background Screening to Dayforce . Candidate Background Screening enables the provider to update the background screening status, URL, Report containing Personal Identifiable Information (PII) to Dayforce .",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ScreeningRequestId*",
+            "in": "query",
+            "required": false,
+            "type": "n/a",
+            "description": "String"
+          },
+          {
+            "name": "URL",
+            "in": "query",
+            "required": false,
+            "type": "n/a",
+            "description": "String"
+          },
+          {
+            "name": "ScreeningStatus",
+            "in": "query",
+            "required": false,
+            "type": "screening status object",
+            "description": "String"
+          },
+          {
+            "name": "AdjudicationStatus",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate background screening adjudication status"
+          },
+          {
+            "name": "CandidatePII",
+            "in": "query",
+            "required": false,
+            "type": "candidate pii object",
+            "description": "String"
+          },
+          {
+            "name": "SocialSecurityNumber",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate Social Security number"
+          },
+          {
+            "name": "SocialInsuranceNumber",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate Social Insurance number"
+          },
+          {
+            "name": "DriverLicense",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Candidate driver license"
+          }
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/CandidateRightToWorkResults": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "PATCH Candidate Background Screening Right to Work",
+        "description": "Patch Candidate Background Screening Right to Work to Dayforce . Candidate work rights status  is displayed on the candidate grid in the Indicators field.",
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "ScreeningRequestId*",
+            "in": "query",
+            "required": false,
+            "type": "n/a",
+            "description": "Dayforcecandidate background screening reference ID"
+          },
+          {
+            "name": "CandidateRightToWorkResults",
+            "in": "query",
+            "required": false,
+            "type": "see next table",
+            "description": "The candidate right to work results. See next table for parameters."
+          }
+        ]
+      }
+    },
+    "/v1/jobfeeds": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "Track Candidate Source",
+        "description": "The following sections describe how you can track candidate source for client career sites:",
+        "tags": [
+          "dayforce"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Get_V1_OrgUnitsResponse200": {
+      "type": "object",
+      "example": {
+        "Data": [
+          {
+            "XRefCode": "Corporate"
+          },
+          {
+            "XRefCode": "500Operations"
+          },
+          {
+            "XRefCode": "500Packaging"
+          },
+          {
+            "XRefCode": "Shop1"
+          }
+        ]
+      }
+    },
+    "Post_V1_employeeXRefCode_EmployeeAvailabilityBody": {
+      "type": "object",
+      "example": {
+        "IsDefault": true,
+        "EffectiveStart": "2022-02-24T23:38:41.442Z",
+        "EffectiveEnd": "2022-02-24T23:38:41.442Z",
+        "ManagerComments": "string",
+        "Weeks": [
+          {
+            "Days": [
+              {
+                "StartTime1": "string",
+                "EndTime1": "string",
+                "StartTime2": "string",
+                "EndTime2": "string",
+                "IsAvailable": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Get_V1_LaborMetrics_xRefCodeResponse200": {
+      "type": "object",
+      "example": {
+        "Data": {
+          "Name": "string",
+          "Description": "string",
+          "EffectiveStart": "2022-01-07T17:35:05.182Z",
+          "EffectiveEnd": "2022-01-07T17:35:05.182Z",
+          "LaborMetricsCodeXRefCode": "string",
+          "ClockTransferCode": "string",
+          "LedgerCode": "string",
+          "OrgXRefCodes": [
+            "string"
+          ],
+          "LaborMetricsTypeXRefCode": "string"
+        },
+        "ProcessResults": [
+          {
+            "Code": "string",
+            "Context": "string",
+            "Level": "string",
+            "Message": "string"
+          }
+        ]
+      }
+    },
+    "Get_V1_LaborMetricTypes_xRefCodeResponse200": {
+      "type": "object",
+      "example": {
+        "Data": {
+          "Name": "string",
+          "Description": "string",
+          "ClockTransferCode": "string",
+          "LaborMetricTypeXRefCode": "string"
+        },
+        "ProcessResults": [
+          {
+            "Code": "string",
+            "Context": "string",
+            "Level": "string",
+            "Message": "string"
+          }
+        ]
+      }
+    },
+    "Post_V1_LaborMetricsBody": {
+      "type": "object",
+      "example": {
+        "ShortName": "string",
+        "LongName": "string",
+        "EffectiveFrom": "2022-01-07T18:05:09.164Z",
+        "EffectiveEnd": "2022-01-07T18:05:09.164Z",
+        "LaborMetricsCodeXRefCode": "string",
+        "ClockTransferCode": "string",
+        "LedgerCode": "string",
+        "OrgUnitXRefCodes": [
+          "string"
+        ],
+        "LaborMetricsTypeXRefCode": "string",
+        "IsDeleted": true
+      }
+    },
+    "Patch_V1_LaborMetricsBody": {
+      "type": "object",
+      "example": {
+        "ShortName": "string",
+        "LongName": "string",
+        "EffectiveFrom": "2022-01-07T18:57:33.897Z",
+        "EffectiveEnd": "2022-01-07T18:57:33.897Z",
+        "LaborMetricsCodeXRefCode": "string",
+        "ClockTransferCode": "string",
+        "LedgerCode": "string",
+        "OrgUnitXRefCodes": [
+          "string"
+        ],
+        "LaborMetricsTypeXRefCode": "string",
+        "IsDeleted": true
+      }
+    },
+    "Post_V1_LaborMetricTypesBody": {
+      "type": "object",
+      "example": {
+        "ShortName": "string",
+        "LongName": "string",
+        "LaborMetricTypeXRefCode": "string",
+        "ClockTransferCode": "string",
+        "IsDeleted": true
+      }
+    },
+    "Patch_V1_LaborMetricTypesBody": {
+      "type": "object",
+      "example": {
+        "ShortName": "string",
+        "LongName": "string",
+        "LaborMetricTypeXRefCode": "string",
+        "ClockTransferCode": "string",
+        "IsDeleted": true
+      }
+    },
+    "Get_V1_LegacyLaborMetricResponse200": {
+      "type": "object",
+      "example": {
+        "Data": {
+          "Name": "string",
+          "Description": "string",
+          "LegacyLaborMetricType": "string",
+          "LegacyLaborMetricXRefCode": "string"
+        },
+        "ProcessResults": [
+          {
+            "Code": "string",
+            "Context": "string",
+            "Level": "string",
+            "Message": "string"
+          }
+        ]
+      }
+    },
+    "Post_V1_LegacyLaborMetricBody": {
+      "type": "object",
+      "example": {
+        "ShortName": "string",
+        "LongName": "string",
+        "LegacyLaborMetricType": "string",
+        "LegacyLaborMetricXRefCode": "string"
+      }
+    },
+    "Patch_V1_LegacyLaborMetricBody": {
+      "type": "object",
+      "example": {
+        "ShortName": "string",
+        "LongName": "string",
+        "LegacyLaborMetricType": "string",
+        "LegacyLaborMetricXRefCode": "string"
+      }
+    },
+    "Post_V1_ProjectsBody": {
+      "type": "object",
+      "example": {
+        "ProjectXRefCode": "string",
+        "ShortName": "string",
+        "CreationOrgUnitXRefCodes": [
+          "string"
+        ],
+        "ClockTransferCode": "string",
+        "ProjectPriority": 0,
+        "AccountNum": "string",
+        "IFRSClassification": true,
+        "LongName": "string",
+        "LedgerCode": "string",
+        "CertifiedPayrollProjectNumber": "string",
+        "ProjectClientXRefCode": "string",
+        "ProjectTypeXRefCode": "string",
+        "ProjectPhaseXRefCode": "string",
+        "ProductGroupXRefCode": "string",
+        "ProductModuleXRefCode": "string",
+        "StartDate": "2022-04-07T19:56:31.648Z",
+        "DueDate": "2022-04-07T19:56:31.648Z",
+        "BudgetHours": 0,
+        "BudgetAmount": 0,
+        "EmployeeAssignment": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "DeptJobAssignment": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "DepartmentAssignment": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "CompletedDate": "2022-04-07T19:56:31.648Z",
+        "PctComplete": 0,
+        "IsDeleted": true,
+        "PayCodeXRefCodeChargeToHours": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "PayCodeXRefCodeChargeToAmount": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "ParentProjectXRefCode": "string",
+        "TaxLocationAddressXRefCode": "string",
+        "IsResidentAddressUsedForTaxation": true
+      }
+    },
+    "Patch_V1_ProjectsBody": {
+      "type": "object",
+      "example": {
+        "ProjectXRefCode": "string",
+        "ShortName": "string",
+        "CreationOrgUnitXRefCodes": [
+          "string"
+        ],
+        "ClockTransferCode": "string",
+        "ProjectPriority": 0,
+        "AccountNum": "string",
+        "IFRSClassification": true,
+        "LongName": "string",
+        "LedgerCode": "string",
+        "CertifiedPayrollProjectNumber": "string",
+        "ProjectClientXRefCode": "string",
+        "ProjectTypeXRefCode": "string",
+        "ProjectPhaseXRefCode": "string",
+        "ProductGroupXRefCode": "string",
+        "ProductModuleXRefCode": "string",
+        "StartDate": "2022-04-08T14:28:49.243Z",
+        "DueDate": "2022-04-08T14:28:49.243Z",
+        "BudgetHours": 0,
+        "BudgetAmount": 0,
+        "EmployeeAssignment": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "DeptJobAssignment": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "DepartmentAssignment": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "CompletedDate": "2022-04-08T14:28:49.244Z",
+        "PctComplete": 0,
+        "IsDeleted": true,
+        "PayCodeXRefCodeChargeToHours": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "PayCodeXRefCodeChargeToAmount": {
+          "IsAssignedAll": true,
+          "XrefCodes": [
+            "string"
+          ]
+        },
+        "ParentProjectXRefCode": "string",
+        "TaxLocationAddressXRefCode": "string",
+        "IsResidentAddressUsedForTaxation": true
+      }
+    },
+    "Get_V1_EmployeeBalancePeriodsResponse200": {
+      "type": "object",
+      "example": {
+        "Data": [
+          {
+            "EmployeeXRefCode": "string",
+            "BalanceName": "string",
+            "BalanceXRefCode": "string",
+            "EffectiveStart": "2021-03-09T19:31:05.537Z",
+            "EffectiveEnd": "2021-03-09T19:31:05.537Z",
+            "InitialAccruedValue": 0,
+            "InitialGrantValue": 0,
+            "CurrentAccruedValue": 0,
+            "CurrentGrantValue": 0,
+            "MinimumValue": 0,
+            "MaximumValue": 0
+          }
+        ],
+        "ProcessResults": [
+          {
+            "Code": "string",
+            "Context": "string",
+            "Level": "string",
+            "Message": "string"
+          }
+        ]
+      }
+    },
+    "Get_V1_EmployeeBalanceTransactionsResponse200": {
+      "type": "object",
+      "example": {
+        "Data": [
+          {
+            "EmployeeBalancePeriodIdExternal": 0,
+            "EffectiveStart": "2021-02-22T17:35:50.688Z",
+            "EffectiveEnd": "2021-02-22T17:35:50.688Z",
+            "Transactions": [
+              {
+                "TransactionDate": "2021-02-22T17:35:50.689Z",
+                "ExpiryDate": "2021-02-22T17:35:50.689Z",
+                "Delta": 0,
+                "GrantDelta": 0,
+                "TransactionSource": 0,
+                "TAFWXRefCode": "string",
+                "Comment": "string",
+                "ApprovalStatus": "string"
+              }
+            ]
+          }
+        ],
+        "ProcessResults": [
+          {
+            "Code": "string",
+            "Context": "string",
+            "Level": "string",
+            "Message": "string"
+          }
+        ]
+      }
+    },
+    "Get_V1_EmployeePaySummariesResponse200": {
+      "type": "object",
+      "example": {
+        "Data": [
+          {
+            "EmployeeXRefCode": "string",
+            "PositionXRefCode": "string",
+            "DepartmentXRefCode": "string",
+            "JobXRefCode": "string",
+            "PayCodeXRefCode": "string",
+            "PayCategoryXRefCode": "string",
+            "PayDate": "2020-07-20T15:44:51.720Z",
+            "BusinessDate": "2020-07-20T15:44:51.720Z",
+            "TimeStart": "2020-07-20T15:44:51.720Z",
+            "TimeEnd": "2020-07-20T15:44:51.720Z",
+            "PunchSegmentStart": "2020-07-20T15:44:51.720Z",
+            "LocationXRefCode": "string",
+            "NetHours": 0,
+            "MinuteDuration": 0,
+            "Rate": 0,
+            "PayAmount": 0,
+            "IsPremium": true,
+            "ProjectXRefCode": "string",
+            "DocketXRefCode": "string",
+            "PieceQuantity": 0,
+            "LaborMetricsCode0XRefCode": "string",
+            "LaborMetricsCode1XRefCode": "string",
+            "LaborMetricsCode2XRefCode": "string",
+            "LaborMetricsCode3XRefCode": "string",
+            "LaborMetricsCode4XRefCode": "string",
+            "LaborMetricsCode5XRefCode": "string",
+            "LaborMetricsCode6XRefCode": "string",
+            "LaborMetricsCode7XRefCode": "string",
+            "LaborMetricsCode8XRefCode": "string",
+            "LaborMetricsCode9XRefCode": "string"
+          }
+        ],
+        "ProcessResults": [
+          {
+            "Code": "string",
+            "Context": "string",
+            "Level": "string",
+            "Message": "string"
+          }
+        ],
+        "Paging": {
+          "Next": "string"
+        }
+      }
+    },
+    "Get_V1_JobFeedsResponse200": {
+      "type": "object",
+      "example": [
+        {
+          "Title": "Store 110 - Accessories Associate",
+          "Description": "Sample desc",
+          "ClientSiteName": "Client Careers Site",
+          "ClientSiteXrefCode": "CANDIDATEPORTAL",
+          "CompanyName": "XYZ Co.",
+          "ParentCompanyName": "XYZ Co.",
+          "JobDetailsUrl": "http://localhost:51009/en-US/DFLocal/Posting/View/17",
+          "ApplyUrl": "https://prdemo.dayforcehcm.com/CandidatePortal/en-US/prdemo2/JobPosting/Job?jobId=17",
+          "City": "San Francisco",
+          "State": "CA",
+          "Country": "USA",
+          "PostalCode": "30009",
+          "Education": "Master\u2019s Degree",
+          "JobFunction": "General and Operations Manager",
+          "EmploymentIndicator": "Contractor",
+          "DatePosted": "2014-06-13T00:00:00",
+          "LastUpdated": "2014-06-13T17:06:44.16",
+          "ReferenceNumber": 17,
+          "CultureCode": "en-US",
+          "ParentRequisitionCode": 3,
+          "HiringRate": 10.3,
+          "JobType": 0,
+          "TravelPercentage": 30,
+          "TravelRequired": 1,
+          "TelecommutePercentage": 10
+        }
+      ]
+    },
+    "Patch_V1_EmployeeSchedulesBody": {
+      "type": "object",
+      "example": [
+        {
+          "EmployeeScheduleXRefCode": "string",
+          "TimeStart": "2023-10-18T16:15:16.446Z",
+          "TimeEnd": "2023-10-18T16:15:16.446Z",
+          "IsDeleted": true,
+          "EmployeeXRefCode": "string",
+          "PostShiftBid": true,
+          "Breaks": [
+            {
+              "TimeStart": "2023-10-18T16:15:16.446Z",
+              "TimeEnd": "2023-10-18T16:15:16.446Z",
+              "Type": 1
+            }
+          ],
+          "Activities": [
+            {
+              "XRefCode": "string",
+              "TimeStart": "2023-10-18T16:15:16.446Z",
+              "TimeEnd": "2023-10-18T16:15:16.446Z"
+            }
+          ],
+          "Segments": [
+            {
+              "TimeStart": "2023-10-18T16:15:16.446Z",
+              "TimeEnd": "2023-10-18T16:15:16.446Z",
+              "PositionXRefCode": "string",
+              "DocketXRefCode": "string",
+              "PayAdjCodeXRefCode": "string",
+              "OrgLocationTypeXRefCode": "string",
+              "ProjectXRefCode": "string",
+              "Comment": "string",
+              "LaborMetrics": [
+                {
+                  "CodeXRefCode": "string",
+                  "TypeXRefCode": "string"
+                }
+              ]
+            }
+          ],
+          "PositionXRefCode": "string",
+          "DocketXRefCode": "string",
+          "PayAdjCodeXRefCode": "string",
+          "OrgLocationTypeXRefCode": "string",
+          "ProjectXRefCode": "string",
+          "Comment": "string",
+          "LaborMetrics": [
+            {
+              "CodeXRefCode": "string",
+              "TypeXRefCode": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "Post_V1_BackgroundScreeningResponse200": {
+      "type": "object",
+      "example": {
+        "ProviderReference": "BS_GENERIC",
+        "OrderStatuses": [
+          "Order Status 1",
+          "Order Status 2"
+        ],
+        "ResultStatuses": [
+          "Result Status 1",
+          "Result Status 2"
+        ],
+        "AdjudicationStatuses": [
+          "Adjudication Status 1",
+          "Adjudication Status 2"
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth2": {
+      "type": "oauth2",
+      "flow": "application",
+      "tokenUrl": "https://auth.example.com/token",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2": []
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "session_id": "b99c6ba3-8035-4b5e-aa9a-81deda487059",
+  "url": "https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api",
+  "doc_type": "DocType.STATIC_HTML",
+  "pages_crawled": 2,
+  "endpoints_found": 0,
+  "auth_type": "session",
+  "has_graphql": false,
+  "title": "Welcome to the UKG Pro Workforce Management API",
+  "servers": [],
+  "status_log": [
+    "Starting crawl pipeline...",
+    "Probing for OpenAPI/Swagger spec...",
+    "Scoping crawl to path prefix: /wfm/reference/",
+    "Fetching entry page...",
+    "Starting crawl [auto, concurrency=10]...",
+    "Crawling (1) https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workfor... [0 in queue]",
+    "  +1 new links (queue: 1)",
+    "Crawling (2) https://developer.ukg.com/wfm/reference/wfm-webhook-events... [0 in queue]",
+    "Crawl complete. 2 pages in 19s.",
+    "Crawled 2 page(s). Parsing...",
+    "Extracted 0 raw endpoints. Normalizing...",
+    "0 unique endpoints after dedup. Generating specs..."
+  ]
+}

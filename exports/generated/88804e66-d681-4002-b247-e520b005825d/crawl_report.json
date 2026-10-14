@@ -1,0 +1,23 @@
+{
+  "session_id": "88804e66-d681-4002-b247-e520b005825d",
+  "url": "https://developers.adp.com/apis/api-explorer/hcm-offrg-wfn.next.gen",
+  "doc_type": "DocType.STATIC_HTML",
+  "pages_crawled": 1,
+  "endpoints_found": 0,
+  "auth_type": "oauth2",
+  "has_graphql": false,
+  "title": "ADP Developer Resources",
+  "servers": [],
+  "status_log": [
+    "Starting crawl pipeline...",
+    "Probing for OpenAPI/Swagger spec...",
+    "Scoping crawl to path prefix: /apis/api-explorer/",
+    "Fetching entry page...",
+    "Starting Playwright crawl [auto (crawl until complete)]...",
+    "Crawling (1) https://developers.adp.com/apis/api-explorer/hcm-offrg-wfn.next.gen... [0 in queue]",
+    "Auto-crawl complete. Visited 1 pages, queue empty.",
+    "Crawled 1 page(s). Parsing...",
+    "Extracted 0 raw endpoints. Normalizing...",
+    "0 unique endpoints after dedup. Generating specs..."
+  ]
+}

@@ -1,0 +1,228 @@
+components:
+  securitySchemes:
+    oauth2:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://auth.example.com/token
+      type: oauth2
+info:
+  description: ''
+  title: RESTful Retrieve Department Data • Dayforce RESTful Web Services Developer
+    Guide • Reader • Welcome to the Dayforce Help Portal
+  version: 1.0.0
+openapi: 3.1.0
+paths:
+  /V1/Jobs:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/KpiData:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/Reports/Payroll_Earning_Hours_Detail:
+    get:
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{V1Id}:
+    get:
+      parameters:
+      - in: path
+        name: V1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{V1Id}/Package:
+    get:
+      parameters:
+      - in: path
+        name: V1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{V1Id}/Status:
+    get:
+      parameters:
+      - in: path
+        name: V1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{V1Id}/{V1IdId}:
+    get:
+      parameters:
+      - in: path
+        name: V1IdId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: V1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{V1Id}/{xRefCode}:
+    get:
+      parameters:
+      - in: path
+        name: xRefCode
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: V1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{V1Id}/{xRefCode}/{xRefCodeId}:
+    get:
+      parameters:
+      - in: path
+        name: xRefCodeId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: xRefCode
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: V1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{employeeXRefCode/{employeeXRefCodeId}:
+    get:
+      parameters:
+      - in: path
+        name: employeeXRefCodeId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /V1/{employeeXRefCode}/{employeeXRefCodeId}:
+    get:
+      parameters:
+      - in: path
+        name: employeeXRefCodeId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: employeeXRefCode
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /v1/Reports/{reportXRefCode}:
+    get:
+      parameters:
+      - in: path
+        name: reportXRefCode
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /v1/{v1Id}:
+    get:
+      parameters:
+      - in: path
+        name: v1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /v1/{v1Id}/abc123:
+    get:
+      parameters:
+      - in: path
+        name: v1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+  /v1/{v1Id}/{v1IdId}:
+    get:
+      parameters:
+      - in: path
+        name: v1IdId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: v1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - dayforce
+security:
+- oauth2: []
+servers:
+- url: https://help.dayforce.com
+tags:
+- name: dayforce

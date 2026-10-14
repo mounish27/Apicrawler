@@ -1,0 +1,1123 @@
+components:
+  securitySchemes:
+    oauth2:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://auth.example.com/token
+      type: oauth2
+info:
+  description: ''
+  title: RESTful Add and Update Org Units
+  version: 1.0.0
+openapi: 3.1.0
+paths:
+  /V1/BackgroundScreening:
+    patch:
+      description: Patch Candidate Background Screening to Dayforce . Candidate Background
+        Screening enables the provider to update the background screening status,
+        URL, Report containing Personal Identifiable Information (PII) to Dayforce
+        .
+      parameters:
+      - description: String
+        in: query
+        name: ScreeningRequestId*
+        required: false
+        schema:
+          type: n/a
+      - description: String
+        in: query
+        name: URL
+        required: false
+        schema:
+          type: n/a
+      - description: String
+        in: query
+        name: ScreeningStatus
+        required: false
+        schema:
+          type: screening status object
+      - description: Candidate background screening adjudication status
+        in: query
+        name: AdjudicationStatus
+        required: false
+        schema:
+          type: string
+      - description: String
+        in: query
+        name: CandidatePII
+        required: false
+        schema:
+          type: candidate pii object
+      - description: Candidate Social Security number
+        in: query
+        name: SocialSecurityNumber
+        required: false
+        schema:
+          type: string
+      - description: Candidate Social Insurance number
+        in: query
+        name: SocialInsuranceNumber
+        required: false
+        schema:
+          type: string
+      - description: Candidate driver license
+        in: query
+        name: DriverLicense
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Candidate Background Screening
+      tags:
+      - dayforce
+    post:
+      description: POST Background Screening Provider Statuses endpoint enables the
+        provider to send background screening statuses  to Dayforce .
+      parameters:
+      - description: Provider unique identifier
+        in: query
+        name: ProviderReference
+        required: false
+        schema:
+          type: string
+      - description: List of strings of the screening order statuses
+        in: query
+        name: OrderStatuses
+        required: false
+        schema:
+          type: list of strings
+      - description: List of strings of the screening adjudication statuses
+        in: query
+        name: AdjudicationStatuses
+        required: false
+        schema:
+          type: list of strings
+      - description: List of strings of the screening result statuses
+        in: query
+        name: ResultStatuses
+        required: false
+        schema:
+          type: list of strings
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                AdjudicationStatuses:
+                - Adjudication Status 1
+                - Adjudication Status 2
+                OrderStatuses:
+                - Order Status 1
+                - Order Status 2
+                ProviderReference: BS_GENERIC
+                ResultStatuses:
+                - Result Status 1
+                - Result Status 2
+          description: OK
+      summary: POST Background Screening Provider Statuses
+      tags:
+      - dayforce
+  /V1/BackgroundScreening/AdjudicationStatus:
+    patch:
+      description: Patch Candidate Background Screening Adjudication Status to Dayforce
+        . Candidate Background Screening Adjudication Status is displayed on the candidate
+        grid as part of the Screening Order Field. It is displayed side by side with
+        the Background Screening Status.
+      parameters:
+      - description: Dayforcecandidate background screening reference
+        in: query
+        name: ScreeningRequestId*
+        required: false
+        schema:
+          type: string
+      - description: Candidate background screening adjudication status
+        in: query
+        name: AdjudicationStatus*
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Candidate Background Screening Adjudication Status
+      tags:
+      - dayforce
+  /V1/BackgroundScreening/BillingCode:
+    post:
+      description: POST Background Screening Billing Codes endpoint enables the provider
+        to send a list of Billing Codes to Dayforce . The provider can also send the
+        list of associated packages (if any) together.
+      parameters:
+      - description: Provider Unique Identifier.
+        in: query
+        name: ProviderReference*
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: POST Background Screening Billing Codes
+      tags:
+      - dayforce
+  /V1/BackgroundScreening/CandidateRightToWorkResults:
+    patch:
+      description: Patch Candidate Background Screening Right to Work to Dayforce
+        . Candidate work rights status  is displayed on the candidate grid in the
+        Indicators field.
+      parameters:
+      - description: Dayforcecandidate background screening reference ID
+        in: query
+        name: ScreeningRequestId*
+        required: false
+        schema:
+          type: n/a
+      - description: The candidate right to work results. See next table for parameters.
+        in: query
+        name: CandidateRightToWorkResults
+        required: false
+        schema:
+          type: see next table
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Candidate Background Screening Right to Work
+      tags:
+      - dayforce
+  /V1/BackgroundScreening/Package:
+    post:
+      description: POST Background Screening Packages endpoint enables the provider
+        to send a list of packages to Dayforce . The provider can also send the list
+        of associated billing codes (if any) together.
+      parameters:
+      - description: Provider unique identifier
+        in: query
+        name: ProviderReference*
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: POST Background Screening Packages
+      tags:
+      - dayforce
+  /V1/BackgroundScreening/PersonalIdentifiableInformation:
+    patch:
+      description: Patch Candidate Background Screening Personal Identifiable Information
+        (PII) to Dayforce . It enables the provider to update the candidate PII to
+        Dayforce .
+      parameters:
+      - description: String
+        in: query
+        name: ScreeningRequestId*
+        required: false
+        schema:
+          type: n/a
+      - description: String
+        in: query
+        name: CandidatePII*
+        required: false
+        schema:
+          type: candidatepii object
+      - description: Candidate Social Security number.
+        in: query
+        name: SocialSecurityNumber
+        required: false
+        schema:
+          type: string
+      - description: Candidate Social Insurance Number.
+        in: query
+        name: SocialInsuranceNumber
+        required: false
+        schema:
+          type: string
+      - description: Candidate driver license.
+        in: query
+        name: DriverLicense
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Candidate Background Screening Personal Identifiable Information
+      tags:
+      - dayforce
+  /V1/BackgroundScreening/Status:
+    patch:
+      description: Patch Candidate Background Screening Status to Dayforce . Candidate
+        Background Screening Status is displayed on the candidate grid as part of
+        the Screening Order Field.
+      parameters:
+      - description: Dayforcecandidate background screening reference
+        in: query
+        name: ScreeningRequestId*
+        required: false
+        schema:
+          type: string
+      - description: Candidate background screening order status
+        in: query
+        name: ScreeningStatus*
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Candidate Background Screening Status
+      tags:
+      - dayforce
+  /V1/ClientMetadata:
+    get:
+      description: Dayforce hosts multiple versions of this service to support multiple
+        clients. All clients use the same URL, and Dayforce issues an HTTP redirect
+        on every request to ensure that your request is processed with the correct
+        service.
+      responses:
+        '200':
+          description: OK
+      summary: Determine Which URL to Use
+      tags:
+      - dayforce
+  /V1/ContactInformationTypes:
+    get:
+      description: 'The following requests allow the consuming application to retrieve
+        a list of  XRefCodes for HR Admin subfeatures:'
+      responses:
+        '200':
+          description: OK
+      summary: RESTful Get HR Admin XRefCodes
+      tags:
+      - dayforce
+  /V1/Departments:
+    get:
+      description: The GET Departments XRefCodes request allows the consuming application
+        to retrieve a list of  XRefCodes for departments. This request returns only
+        a list of XRefCodes and is the first step in a two-step process that includes
+        a GET Departments By XRefCodes request. See RESTful Get Department Details
+        .
+      responses:
+        '200':
+          description: OK
+      summary: RESTful Get Department XRefCodes
+      tags:
+      - dayforce
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update departments.
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Department Data
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create a department.
+      responses:
+        '200':
+          description: OK
+      summary: POST Department Data
+      tags:
+      - dayforce
+  /V1/EmployeeBalancePeriods:
+    get:
+      description: This request is used to get a list of an employee's entitlement
+        balances.
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                - BalanceName: string
+                  BalanceXRefCode: string
+                  CurrentAccruedValue: 0
+                  CurrentGrantValue: 0
+                  EffectiveEnd: '2021-03-09T19:31:05.537Z'
+                  EffectiveStart: '2021-03-09T19:31:05.537Z'
+                  EmployeeXRefCode: string
+                  InitialAccruedValue: 0
+                  InitialGrantValue: 0
+                  MaximumValue: 0
+                  MinimumValue: 0
+                ProcessResults:
+                - Code: string
+                  Context: string
+                  Level: string
+                  Message: string
+          description: OK
+      summary: Get Employee Balance Periods
+      tags:
+      - dayforce
+  /V1/EmployeeBalanceTransactions:
+    get:
+      description: Balance transactions represent instances when employees earned
+        and used their balances (for example, balances used by time away from work
+        or incremented by entitlement policies).
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                - EffectiveEnd: '2021-02-22T17:35:50.688Z'
+                  EffectiveStart: '2021-02-22T17:35:50.688Z'
+                  EmployeeBalancePeriodIdExternal: 0
+                  Transactions:
+                  - ApprovalStatus: string
+                    Comment: string
+                    Delta: 0
+                    ExpiryDate: '2021-02-22T17:35:50.689Z'
+                    GrantDelta: 0
+                    TAFWXRefCode: string
+                    TransactionDate: '2021-02-22T17:35:50.689Z'
+                    TransactionSource: 0
+                ProcessResults:
+                - Code: string
+                  Context: string
+                  Level: string
+                  Message: string
+          description: OK
+      summary: Get Employee Balance Transactions
+      tags:
+      - dayforce
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update employee
+        balance transactions.
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Employee Balance Transactions
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create an employee
+        balance transaction.
+      responses:
+        '200':
+          description: OK
+      summary: POST Employee Balance Transactions
+      tags:
+      - dayforce
+  /V1/EmployeePayAdjustments:
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update employee
+        pay adjustments.
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Employee Pay Adjustment Data
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create a pay adjustment.
+      responses:
+        '200':
+          description: OK
+      summary: POST Employee Pay Adjustment Data
+      tags:
+      - dayforce
+  /V1/EmployeePaySummaries:
+    get:
+      description: The Get Employee Pay Summaries request allows the consuming application
+        to retrieve employee pay summaries by using the employee XRefCode.
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                - BusinessDate: '2020-07-20T15:44:51.720Z'
+                  DepartmentXRefCode: string
+                  DocketXRefCode: string
+                  EmployeeXRefCode: string
+                  IsPremium: true
+                  JobXRefCode: string
+                  LaborMetricsCode0XRefCode: string
+                  LaborMetricsCode1XRefCode: string
+                  LaborMetricsCode2XRefCode: string
+                  LaborMetricsCode3XRefCode: string
+                  LaborMetricsCode4XRefCode: string
+                  LaborMetricsCode5XRefCode: string
+                  LaborMetricsCode6XRefCode: string
+                  LaborMetricsCode7XRefCode: string
+                  LaborMetricsCode8XRefCode: string
+                  LaborMetricsCode9XRefCode: string
+                  LocationXRefCode: string
+                  MinuteDuration: 0
+                  NetHours: 0
+                  PayAmount: 0
+                  PayCategoryXRefCode: string
+                  PayCodeXRefCode: string
+                  PayDate: '2020-07-20T15:44:51.720Z'
+                  PieceQuantity: 0
+                  PositionXRefCode: string
+                  ProjectXRefCode: string
+                  PunchSegmentStart: '2020-07-20T15:44:51.720Z'
+                  Rate: 0
+                  TimeEnd: '2020-07-20T15:44:51.720Z'
+                  TimeStart: '2020-07-20T15:44:51.720Z'
+                Paging:
+                  Next: string
+                ProcessResults:
+                - Code: string
+                  Context: string
+                  Level: string
+                  Message: string
+          description: OK
+      summary: RESTful Get Employee Pay Summaries
+      tags:
+      - dayforce
+  /V1/EmployeePunches:
+    post:
+      description: 'This POST operation adds an employee time entry. The operation
+        uses the following URL:'
+      parameters:
+      - in: query
+        name: isValidateOnly
+        required: false
+        schema:
+          type: this parameter is used to specify that all of the validations need
+            to be performed without committing any changes. use this parameter to
+            control whether committing information in yourdayforceinstance is your
+            responsibility.the url syntax is:https://www.dayforcehcm.com/api/companyname/v1/employeepunches?isvalidateonly=true
+      responses:
+        '200':
+          description: OK
+      summary: POST Employee Punches
+      tags:
+      - dayforce
+  /V1/EmployeePunches/{xRefCode}:
+    patch:
+      description: 'This PATCH operation updates an employee time entry. The operation
+        uses the following URL:'
+      parameters:
+      - in: query
+        name: xRefCode
+        required: false
+        schema:
+          type: the xrefcode of the time entry that you want to update.
+      - in: query
+        name: isValidateOnly
+        required: false
+        schema:
+          type: this parameter is used to specify that all of the validations need
+            to be performed without committing any changes. use this parameter to
+            control whether committing information in yourdayforceinstance is your
+            responsibility.the url syntax is:https://www.dayforcehcm.com/api/companyname/v1/employeepunches/{xrefcode}?isvalidateonly=true
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Employee Punches
+      tags:
+      - dayforce
+  /V1/EmployeeSchedules:
+    patch:
+      description: Dayforce RESTful services use the PATCH endpoint to create an instance
+        of the resource.  In the case of the Employee Schedules resource, PATCH  refers
+        to creating new shifts.
+      requestBody:
+        content:
+          application/json:
+            example:
+            - Activities:
+              - TimeEnd: '2023-10-18T16:15:16.446Z'
+                TimeStart: '2023-10-18T16:15:16.446Z'
+                XRefCode: string
+              Breaks:
+              - TimeEnd: '2023-10-18T16:15:16.446Z'
+                TimeStart: '2023-10-18T16:15:16.446Z'
+                Type: 1
+              Comment: string
+              DocketXRefCode: string
+              EmployeeScheduleXRefCode: string
+              EmployeeXRefCode: string
+              IsDeleted: true
+              LaborMetrics:
+              - CodeXRefCode: string
+                TypeXRefCode: string
+              OrgLocationTypeXRefCode: string
+              PayAdjCodeXRefCode: string
+              PositionXRefCode: string
+              PostShiftBid: true
+              ProjectXRefCode: string
+              Segments:
+              - Comment: string
+                DocketXRefCode: string
+                LaborMetrics:
+                - CodeXRefCode: string
+                  TypeXRefCode: string
+                OrgLocationTypeXRefCode: string
+                PayAdjCodeXRefCode: string
+                PositionXRefCode: string
+                ProjectXRefCode: string
+                TimeEnd: '2023-10-18T16:15:16.446Z'
+                TimeStart: '2023-10-18T16:15:16.446Z'
+              TimeEnd: '2023-10-18T16:15:16.446Z'
+              TimeStart: '2023-10-18T16:15:16.446Z'
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Employee Schedules
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST endpoint to create an instance
+        of the resource.  In the case of the EmployeeSchedules resource, POST refers
+        to creating a new employee schedule.
+      responses:
+        '200':
+          description: OK
+      summary: POST Employee Schedules
+      tags:
+      - dayforce
+  /V1/Employees:
+    post:
+      description: 'You can use the POST and PATCH HTTP verbs to add and update employee
+        HR data in Dayforce . There are a number of subordinate resources that you
+        can use to insert and update employee HR data in Dayforce . The URL for the
+        subordinate calls is constructed as follows:'
+      responses:
+        '200':
+          description: OK
+      summary: POST and PATCH Employee Subordinate Resources
+      tags:
+      - dayforce
+  /V1/JobFeeds:
+    get:
+      description: Get Job Postings is used to share career site postings in Dayforce
+        with external job boards. Job board providers use this endpoint to obtain
+        job posting data.
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+              - ApplyUrl: https://prdemo.dayforcehcm.com/CandidatePortal/en-US/prdemo2/JobPosting/Job?jobId=17
+                City: San Francisco
+                ClientSiteName: Client Careers Site
+                ClientSiteXrefCode: CANDIDATEPORTAL
+                CompanyName: XYZ Co.
+                Country: USA
+                CultureCode: en-US
+                DatePosted: '2014-06-13T00:00:00'
+                Description: Sample desc
+                Education: Master’s Degree
+                EmploymentIndicator: Contractor
+                HiringRate: 10.3
+                JobDetailsUrl: http://localhost:51009/en-US/DFLocal/Posting/View/17
+                JobFunction: General and Operations Manager
+                JobType: 0
+                LastUpdated: '2014-06-13T17:06:44.16'
+                ParentCompanyName: XYZ Co.
+                ParentRequisitionCode: 3
+                PostalCode: '30009'
+                ReferenceNumber: 17
+                State: CA
+                TelecommutePercentage: 10
+                Title: Store 110 - Accessories Associate
+                TravelPercentage: 30
+                TravelRequired: 1
+          description: OK
+      summary: RESTful Get Job Postings
+      tags:
+      - dayforce
+  /V1/Jobs:
+    get:
+      description: The GET Jobs XRefCodes request allows the consuming application
+        to retrieve a list of  XRefCodes for jobs. This request returns only a list
+        of XRefCodes and is the first step in a two-step process that includes a GET
+        Jobs By XRefCodes request. See RESTful Get Job Details .
+      responses:
+        '200':
+          description: OK
+      summary: RESTful Get Job XRefCodes
+      tags:
+      - dayforce
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update jobs.
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Job Data
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create a job.
+      responses:
+        '200':
+          description: OK
+      summary: POST Job Data
+      tags:
+      - dayforce
+  /V1/LaborMetricTypes:
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update labor metric
+        types.
+      requestBody:
+        content:
+          application/json:
+            example:
+              ClockTransferCode: string
+              IsDeleted: true
+              LaborMetricTypeXRefCode: string
+              LongName: string
+              ShortName: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Labor Metric Types
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create an instance
+        of the resource.  In the case of the Labor Metric Types resource, POST refers
+        to creating a new labor metric type.
+      requestBody:
+        content:
+          application/json:
+            example:
+              ClockTransferCode: string
+              IsDeleted: true
+              LaborMetricTypeXRefCode: string
+              LongName: string
+              ShortName: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: POST Labor Metric Types
+      tags:
+      - dayforce
+  /V1/LaborMetricTypes/xRefCode:
+    get:
+      description: 'This GET operation returns the details of a specific labor metric
+        type based on the XRefCode you enter. The operation uses the following URL:'
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                  ClockTransferCode: string
+                  Description: string
+                  LaborMetricTypeXRefCode: string
+                  Name: string
+                ProcessResults:
+                - Code: string
+                  Context: string
+                  Level: string
+                  Message: string
+          description: OK
+      summary: RESTful Get Labor Metric Type XRefCodes
+      tags:
+      - dayforce
+  /V1/LaborMetrics:
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update labor metric
+        codes.
+      requestBody:
+        content:
+          application/json:
+            example:
+              ClockTransferCode: string
+              EffectiveEnd: '2022-01-07T18:57:33.897Z'
+              EffectiveFrom: '2022-01-07T18:57:33.897Z'
+              IsDeleted: true
+              LaborMetricsCodeXRefCode: string
+              LaborMetricsTypeXRefCode: string
+              LedgerCode: string
+              LongName: string
+              OrgUnitXRefCodes:
+              - string
+              ShortName: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Labor Metrics
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create an instance
+        of the resource.  In the case of the Labor Metrics resource, POST refers to
+        creating a new labor metric code.
+      requestBody:
+        content:
+          application/json:
+            example:
+              ClockTransferCode: string
+              EffectiveEnd: '2022-01-07T18:05:09.164Z'
+              EffectiveFrom: '2022-01-07T18:05:09.164Z'
+              IsDeleted: true
+              LaborMetricsCodeXRefCode: string
+              LaborMetricsTypeXRefCode: string
+              LedgerCode: string
+              LongName: string
+              OrgUnitXRefCodes:
+              - string
+              ShortName: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: POST Labor Metrics
+      tags:
+      - dayforce
+  /V1/LaborMetrics/xRefCode:
+    get:
+      description: 'This GET operation returns the details of a specific labor metric
+        code based on the XRefCode you enter. The operation uses the following URL:'
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                  ClockTransferCode: string
+                  Description: string
+                  EffectiveEnd: '2022-01-07T17:35:05.182Z'
+                  EffectiveStart: '2022-01-07T17:35:05.182Z'
+                  LaborMetricsCodeXRefCode: string
+                  LaborMetricsTypeXRefCode: string
+                  LedgerCode: string
+                  Name: string
+                  OrgXRefCodes:
+                  - string
+                ProcessResults:
+                - Code: string
+                  Context: string
+                  Level: string
+                  Message: string
+          description: OK
+      summary: RESTful Get Labor Metrics XRefCodes
+      tags:
+      - dayforce
+  /V1/LegacyLaborMetric:
+    delete:
+      description: 'This DELETE operation deletes a specific legacy labor metric.
+        The operation uses the following URL:'
+      responses:
+        '200':
+          description: OK
+      summary: RESTful Delete Legacy Labor Metrics
+      tags:
+      - dayforce
+    get:
+      description: 'This GET operation returns the details of a specific legacy labor
+        metric. The operation uses the following URL:'
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                  Description: string
+                  LegacyLaborMetricType: string
+                  LegacyLaborMetricXRefCode: string
+                  Name: string
+                ProcessResults:
+                - Code: string
+                  Context: string
+                  Level: string
+                  Message: string
+          description: OK
+      summary: RESTful Get Legacy Labor Metrics
+      tags:
+      - dayforce
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update legacy labor
+        metrics.
+      requestBody:
+        content:
+          application/json:
+            example:
+              LegacyLaborMetricType: string
+              LegacyLaborMetricXRefCode: string
+              LongName: string
+              ShortName: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Legacy Labor Metrics
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create an instance
+        of the resource.  In the case of the Legacy Labor Metric resource, POST refers
+        to creating a new legacy labor metric.
+      requestBody:
+        content:
+          application/json:
+            example:
+              LegacyLaborMetricType: string
+              LegacyLaborMetricXRefCode: string
+              LongName: string
+              ShortName: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: POST Legacy Labor Metrics
+      tags:
+      - dayforce
+  /V1/OrgUnits:
+    get:
+      description: The GET OrgUnit XRefCodes request allows the consuming application
+        to retrieve a list of org unit XRefCodes. This request returns only a list
+        of XRefCodes and is the first step in a two-step process that includes a GET
+        OrgUnits By XRefCodes request. See RESTful Get Org Unit Details .
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                Data:
+                - XRefCode: Corporate
+                - XRefCode: 500Operations
+                - XRefCode: 500Packaging
+                - XRefCode: Shop1
+          description: OK
+      summary: RESTful Get Org Unit XRefCodes
+      tags:
+      - dayforce
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update org units.
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Org Unit Data
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create an org unit.
+      responses:
+        '200':
+          description: OK
+      summary: POST Org Unit Data
+      tags:
+      - dayforce
+  /V1/Positions:
+    get:
+      description: The GET Positions XRefCodes request allows the consuming application
+        to retrieve a list of  XRefCodes for positions. This request returns only
+        a list of XRefCodes and is the first step in a two-step process that includes
+        a GET Positions By XRefCodes request. See RESTful Get Position Details .
+      responses:
+        '200':
+          description: OK
+      summary: RESTful Get Position XRefCodes
+      tags:
+      - dayforce
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update positions.
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Position Data
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create a position.
+      responses:
+        '200':
+          description: OK
+      summary: POST Position Data
+      tags:
+      - dayforce
+  /V1/Projects:
+    patch:
+      description: Dayforce RESTful services use the PATCH verb to update projects.
+      requestBody:
+        content:
+          application/json:
+            example:
+              AccountNum: string
+              BudgetAmount: 0
+              BudgetHours: 0
+              CertifiedPayrollProjectNumber: string
+              ClockTransferCode: string
+              CompletedDate: '2022-04-08T14:28:49.244Z'
+              CreationOrgUnitXRefCodes:
+              - string
+              DepartmentAssignment:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              DeptJobAssignment:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              DueDate: '2022-04-08T14:28:49.243Z'
+              EmployeeAssignment:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              IFRSClassification: true
+              IsDeleted: true
+              IsResidentAddressUsedForTaxation: true
+              LedgerCode: string
+              LongName: string
+              ParentProjectXRefCode: string
+              PayCodeXRefCodeChargeToAmount:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              PayCodeXRefCodeChargeToHours:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              PctComplete: 0
+              ProductGroupXRefCode: string
+              ProductModuleXRefCode: string
+              ProjectClientXRefCode: string
+              ProjectPhaseXRefCode: string
+              ProjectPriority: 0
+              ProjectTypeXRefCode: string
+              ProjectXRefCode: string
+              ShortName: string
+              StartDate: '2022-04-08T14:28:49.243Z'
+              TaxLocationAddressXRefCode: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: PATCH Projects Data
+      tags:
+      - dayforce
+    post:
+      description: Dayforce RESTful services use the POST verb to create an instance
+        of the resource.  In the case of the Projects resource, POST refers to creating
+        a new project.
+      requestBody:
+        content:
+          application/json:
+            example:
+              AccountNum: string
+              BudgetAmount: 0
+              BudgetHours: 0
+              CertifiedPayrollProjectNumber: string
+              ClockTransferCode: string
+              CompletedDate: '2022-04-07T19:56:31.648Z'
+              CreationOrgUnitXRefCodes:
+              - string
+              DepartmentAssignment:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              DeptJobAssignment:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              DueDate: '2022-04-07T19:56:31.648Z'
+              EmployeeAssignment:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              IFRSClassification: true
+              IsDeleted: true
+              IsResidentAddressUsedForTaxation: true
+              LedgerCode: string
+              LongName: string
+              ParentProjectXRefCode: string
+              PayCodeXRefCodeChargeToAmount:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              PayCodeXRefCodeChargeToHours:
+                IsAssignedAll: true
+                XrefCodes:
+                - string
+              PctComplete: 0
+              ProductGroupXRefCode: string
+              ProductModuleXRefCode: string
+              ProjectClientXRefCode: string
+              ProjectPhaseXRefCode: string
+              ProjectPriority: 0
+              ProjectTypeXRefCode: string
+              ProjectXRefCode: string
+              ShortName: string
+              StartDate: '2022-04-07T19:56:31.648Z'
+              TaxLocationAddressXRefCode: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: POST Projects Data
+      tags:
+      - dayforce
+  /V1/{employeeXRefCode}/EmployeeAvailability:
+    post:
+      description: Dayforce RESTful services use the POST verb to create an instance
+        of the resource.  In the case of the Availability resource, POST refers to
+        creating a new availability record for an employee.
+      parameters:
+      - in: path
+        name: employeeXRefCode
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            example:
+              EffectiveEnd: '2022-02-24T23:38:41.442Z'
+              EffectiveStart: '2022-02-24T23:38:41.442Z'
+              IsDefault: true
+              ManagerComments: string
+              Weeks:
+              - Days:
+                - EndTime1: string
+                  EndTime2: string
+                  IsAvailable: true
+                  StartTime1: string
+                  StartTime2: string
+            schema: {}
+        required: false
+      responses:
+        '200':
+          description: OK
+      summary: POST Availability
+      tags:
+      - dayforce
+  /v1/JobPostingQuestionnaires:
+    post:
+      description: 'Client properties : Recruiting Setup > Client Properties > Allow
+        Candidates and Job Application Sourcing from External Job Boards'
+      responses:
+        '200':
+          description: OK
+      summary: RESTful POST Candidate Sourcing
+      tags:
+      - dayforce
+  /v1/jobfeeds:
+    get:
+      description: 'The following sections describe how you can track candidate source
+        for client career sites:'
+      responses:
+        '200':
+          description: OK
+      summary: Track Candidate Source
+      tags:
+      - dayforce
+security:
+- oauth2: []
+servers:
+- url: https://help.dayforce.com
+tags:
+- name: dayforce

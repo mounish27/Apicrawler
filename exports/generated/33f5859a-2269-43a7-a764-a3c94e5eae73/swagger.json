@@ -1,0 +1,345 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RESTful Retrieve Department Data \u2022 Dayforce RESTful Web Services Developer Guide \u2022 Reader \u2022 Welcome to the Dayforce Help Portal",
+    "version": "1.0.0"
+  },
+  "host": "help.dayforce.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/V1/{V1Id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "V1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/Jobs": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/{v1Id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "v1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{V1Id}/{V1IdId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "V1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "V1IdId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{V1Id}/Package": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "V1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{V1Id}/Status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "V1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/v1/{v1Id}/abc123": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "v1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/v1/{v1Id}/{v1IdId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "v1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "v1IdId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{employeeXRefCode}/{employeeXRefCodeId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "employeeXRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "employeeXRefCodeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{employeeXRefCode/{employeeXRefCodeId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "employeeXRefCodeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{V1Id}/{xRefCode}/{xRefCodeId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "V1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "xRefCodeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/KpiData": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/{V1Id}/{xRefCode}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "V1Id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/Reports/Payroll_Earning_Hours_Detail": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/Reports/{reportXRefCode}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "reportXRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth2": {
+      "type": "oauth2",
+      "flow": "application",
+      "tokenUrl": "https://auth.example.com/token",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2": []
+    }
+  ]
+}

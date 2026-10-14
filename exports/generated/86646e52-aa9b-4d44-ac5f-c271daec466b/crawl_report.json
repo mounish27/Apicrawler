@@ -1,0 +1,23 @@
+{
+  "session_id": "86646e52-aa9b-4d44-ac5f-c271daec466b",
+  "url": "https://help.dayforce.com/r/documents/Dayforce-RESTful-Web-Services-Developer-Guide/RESTful-Retrieve-Department-Data",
+  "doc_type": "DocType.STATIC_HTML",
+  "pages_crawled": 1,
+  "endpoints_found": 0,
+  "auth_type": "session",
+  "has_graphql": false,
+  "title": "Welcome to the Dayforce Help Portal",
+  "servers": [],
+  "status_log": [
+    "Starting crawl pipeline...",
+    "Probing for OpenAPI/Swagger spec...",
+    "Scoping crawl to path prefix: /r/documents/",
+    "Fetching entry page...",
+    "Starting crawl [auto, concurrency=10]...",
+    "Crawling (1) https://help.dayforce.com/r/documents/Dayforce-RESTful-Web-Services-De... [0 in queue]",
+    "Crawl complete. 1 pages in 12s.",
+    "Crawled 1 page(s). Parsing...",
+    "Extracted 0 raw endpoints. Normalizing...",
+    "0 unique endpoints after dedup. Generating specs..."
+  ]
+}

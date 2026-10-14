@@ -1,0 +1,828 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RESTful Add and Update Org Units",
+    "version": "1.0.0"
+  },
+  "host": "help.dayforce.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/V1/OrgUnits": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Departments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Jobs": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/ClientMetadata": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/ClientMetadata": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/BillingCode": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/Package": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/CandidateRightToWorkResults": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/PersonalIdentifiableInformation": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/AdjudicationStatus": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/BackgroundScreening/Status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/Employees": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Employees": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/Employees/abc123": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Positions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/ContactInformationTypes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/Documents": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/Documents/{DocumentId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "DocumentId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{employeeXRefCode}/EmployeeAvailability": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "employeeXRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/{employeeXRefCode/EmployeeAvailability": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/EmployeeRawPunches": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Employees/{xRefCode}/Availability": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/Employees/{xRefCode}/Schedules": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/Employees/{xRefCode}/TimeAwayFromWork": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/v1/EmployeePunches": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/EmployeePaySummaries": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/EmployeePayAdjustments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/EmployeeSchedules": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/EmployeePayrollTax": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LaborMetrics/xRefCode": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LaborMetricTypes/xRefCode": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LaborMetrics": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LaborMetricTypes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/LegacyLaborMetric": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Projects": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Projects/xRefCode": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeeBalancePeriods": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeeBalanceTransactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePaySummaries": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePayAdjustments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/JobStepRate": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePaySummariesRetro": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/ReportMetadata": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/I9Orders": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/I9Orders": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/I9Orders/{I9OrderId}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "I9OrderId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/JobFeeds": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/JobFeeds": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/JobPostingQuestionnaires": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/KpiData": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/PlanTargets": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/OperatingHours/GetOperatingHours": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/OperatingHours/PostOperatingHoursException": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/OperatingHours/PatchOperatingHoursException": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/OperatingHours": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePunches": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/EmployeePunches/{xRefCode}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "xRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/V1/EmployeeSchedules": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/V1/Reports/Payroll_Earning_Hours_Detail": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    },
+    "/v1/Reports/{reportXRefCode}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ],
+        "parameters": [
+          {
+            "name": "reportXRefCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/v1/jobfeeds": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "dayforce"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,600 @@
+{
+  "session_id": "43e2d197-bf13-410f-a9c5-18c3b9b63308",
+  "source_url": "https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api",
+  "doc_type": "DocType.STATIC_HTML",
+  "total_endpoints": 74,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/{v1Id}/setup/break_rules/{id}",
+      "summary": null,
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/json",
+      "summary": "Quick Start",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/team_segments/active_members/multi_read",
+      "summary": "Active Team Members",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_create",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_upsert",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_delete",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/{workId}/{id}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_read",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/exports/apply_read",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/{workId}/{id}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/{workId}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/{workId}/multi_update",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/{workId}/{id}",
+      "summary": "Activity",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/pay_code_actions",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/pay_code_actions/multi_create",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/pay_code_actions/{id}",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/pay_code_actions/multi_delete",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/pay_code_actions/{id}",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/pay_code_actions/multi_read",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/pay_code_actions",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/pay_code_actions/{id}",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/pay_code_actions/multi_update",
+      "summary": "Activity Actions",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/employee_activities/multi_read",
+      "summary": "Activity Assignments",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_efficiencies/multi_read",
+      "summary": "Activity Efficiencies",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/form_profiles",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/form_profiles/multi_create",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/form_profiles/{id}",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/form_profiles/multi_delete",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/form_profiles",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/form_profiles/{id}",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/form_profiles/multi_read",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/form_profiles/{id}",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/form_profiles/multi_update",
+      "summary": "Activity Form Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/setup/control_types",
+      "summary": "Activity Form Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/setup/entry_types",
+      "summary": "Activity Form Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/setup/form_types",
+      "summary": "Activity Form Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/setup/input_source_types",
+      "summary": "Activity Form Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/setup/validation_types",
+      "summary": "Activity Form Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/setup/offline_forms",
+      "summary": "Activity Form Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/forms",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/forms/multi_create",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/forms/{id}",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/forms/multi_delete",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms/{id}",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/forms/multi_read",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/forms",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/forms/{id}",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/forms/multi_update",
+      "summary": "Activity Forms",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_shifts/historical_net_changes/multi_read",
+      "summary": "Activity Historical Net Changes",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/move_quantities/audit/multi_read",
+      "summary": "Activity Move Quantity Transaction Audits",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_shifts/net_changes/multi_read",
+      "summary": "Activity Net Changes",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/activity_profiles/setup/future_validation_types",
+      "summary": "Activity Profile Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/activity_profiles/setup/tracking_status_types",
+      "summary": "Activity Profile Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/activity_profiles/setup/variance_check_types",
+      "summary": "Activity Profile Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/activity_profiles/setup/work_rules",
+      "summary": "Activity Profile Resources",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_profiles",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_profiles/multi_create",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/activity_profiles/{id}",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_profiles/multi_delete",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/activity_profiles/{id}",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_profiles/multi_read",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/activity_profiles",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/activity_profiles/{id}",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/activity_profiles/multi_update",
+      "summary": "Activity Profiles",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/queries/multi_create",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/queries",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/queries/multi_delete",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/v1/work/queries/{id}",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/queries/multi_read",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/queries/{id}",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/v1/work/queries",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/v1/work/queries/multi_update",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/v1/work/queries/{id}",
+      "summary": "Activity Queries",
+      "tags": [],
+      "auth_type": "unknown",
+      "deprecated": false
+    }
+  ]
+}

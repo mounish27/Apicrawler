@@ -1,0 +1,1330 @@
+components:
+  schemas:
+    ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest:
+      oneOf:
+      - oneOf:
+        - properties:
+            details:
+              nullable: true
+              properties:
+                error-offsets:
+                  items:
+                    example: 1
+                    type: integer
+                  type: array
+                results:
+                  items:
+                    properties:
+                      error:
+                        nullable: true
+                        properties:
+                          details:
+                            properties:
+                              input:
+                                properties:
+                                  where:
+                                    properties:
+                                      activitySegmentIDs:
+                                        items:
+                                          example: 152
+                                          type: integer
+                                        type: array
+                                    required:
+                                    - activitySegmentIDs
+                                    type: object
+                                required:
+                                - where
+                                type: object
+                            required:
+                            - input
+                            type: object
+                          errorCode:
+                            example: WFA-231207
+                            type: string
+                          message:
+                            example: The specified identifier is not associated with
+                              any activity segment. Include valid parameters and try
+                              again.
+                            type: string
+                        required:
+                        - details
+                        - errorCode
+                        - message
+                        type: object
+                      success:
+                        properties:
+                          activeTeamMembers:
+                            items:
+                              properties:
+                                effectiveMembershipId:
+                                  example: 76
+                                  type: integer
+                                employee:
+                                  properties:
+                                    id:
+                                      example: 4870
+                                      type: integer
+                                    qualifier:
+                                      example: 225449QOWSBAGUR
+                                      type: string
+                                  required:
+                                  - qualifier
+                                  - id
+                                  type: object
+                                endDateTime:
+                                  example: '2021-08-09T17:00:00'
+                                  format: date-time
+                                  type: string
+                                endTimezone:
+                                  properties:
+                                    id:
+                                      example: 134111
+                                      type: integer
+                                    qualifier:
+                                      example: (GMT -05:00) Eastern Time (USA; Canada)
+                                      type: string
+                                  required:
+                                  - qualifier
+                                  - id
+                                  type: object
+                                membershipId:
+                                  example: 153
+                                  type: integer
+                                startDateTime:
+                                  example: '2021-08-09T08:00:00'
+                                  format: date-time
+                                  type: string
+                                startTimezone:
+                                  properties:
+                                    id:
+                                      example: 134111
+                                      type: integer
+                                    qualifier:
+                                      example: (GMT -05:00) Eastern Time (USA; Canada)
+                                      type: string
+                                  required:
+                                  - qualifier
+                                  - id
+                                  type: object
+                                workItemId:
+                                  example: 13863
+                                  type: integer
+                              required:
+                              - endDateTime
+                              - workItemId
+                              - startDateTime
+                              - effectiveMembershipId
+                              - membershipId
+                              - startTimezone
+                              - endTimezone
+                              - employee
+                              type: object
+                            type: array
+                          identifier:
+                            properties:
+                              id:
+                                example: 123
+                                type: integer
+                            required:
+                            - id
+                            type: object
+                        required:
+                        - identifier
+                        - activeTeamMembers
+                        type: object
+                    type: object
+                  type: array
+              required:
+              - error-offsets
+              - results
+              type: object
+            errorCode:
+              example: WFA-000036
+              nullable: true
+              type: string
+            from:
+              nullable: true
+              properties:
+                employeeSet:
+                  properties:
+                    dateRange:
+                      properties:
+                        symbolicPeriod:
+                          properties:
+                            id:
+                              example: 5
+                              type: integer
+                          required:
+                          - id
+                          type: object
+                      required:
+                      - symbolicPeriod
+                      type: object
+                    hyperfind:
+                      properties:
+                        id:
+                          example: '1'
+                          type: string
+                      required:
+                      - id
+                      type: object
+                  required:
+                  - hyperfind
+                  - dateRange
+                  type: object
+                view:
+                  example: EMP
+                  type: string
+              required:
+              - view
+              - employeeSet
+              type: object
+            message:
+              example: Some of the entities were not exported because of errors in
+                the source data. Correct those errors and try again.
+              nullable: true
+              type: string
+            select:
+              items:
+                properties:
+                  key:
+                    example: EMP_COMMON_FULL_NAME
+                    type: string
+                required:
+                - key
+                type: object
+              nullable: true
+              type: array
+            where:
+              oneOf:
+              - nullable: true
+                oneOf:
+                - items:
+                    properties:
+                      key:
+                        example: EMP_COMMON_PRIMARY_JOB
+                        type: string
+                      operator:
+                        example: STARTS_WITH
+                        type: string
+                      values:
+                        items:
+                          example: Apprentice
+                          type: string
+                        type: array
+                    required:
+                    - key
+                    - operator
+                    - values
+                    type: object
+                  type: array
+                - properties:
+                    activitySegmentIDs:
+                      items:
+                        example: 777
+                        type: integer
+                      type: array
+                    activitySegmentIdentifiers:
+                      items:
+                        properties:
+                          activity:
+                            properties:
+                              id:
+                                example: 201
+                                type: integer
+                              qualifier:
+                                example: ActivityDump1
+                                type: string
+                            required:
+                            - qualifier
+                            - id
+                            type: object
+                          start:
+                            example: 2021-08-10T08:00
+                            type: string
+                          startTimezone:
+                            nullable: true
+                            properties:
+                              id:
+                                example: -10
+                                type: integer
+                              qualifier:
+                                example: UTC
+                                type: string
+                            required:
+                            - id
+                            - qualifier
+                            type: object
+                          team:
+                            properties:
+                              id:
+                                example: 165
+                                type: integer
+                              qualifier:
+                                example: 225449-YEEWXLZ
+                                type: string
+                            required:
+                            - qualifier
+                            - id
+                            type: object
+                        required:
+                        - start
+                        - activity
+                        - team
+                        type: object
+                      type: array
+                  required:
+                  - activitySegmentIDs
+                  - activitySegmentIdentifiers
+                  type: object
+              - properties:
+                  employees:
+                    properties:
+                      ids:
+                        items:
+                          example: '243'
+                          type: string
+                        type: array
+                      qualifiers:
+                        items:
+                          example: '20335'
+                          type: string
+                        type: array
+                      refs:
+                        items:
+                          properties:
+                            id:
+                              example: 243
+                              type: integer
+                            qualifier:
+                              example: '20335'
+                              type: string
+                          required:
+                          - id
+                          - qualifier
+                          type: object
+                        type: array
+                    required:
+                    - ids
+                    - qualifiers
+                    - refs
+                    type: object
+                  endDateTime:
+                    example: '2024-04-20T19:00:00'
+                    format: date-time
+                    type: string
+                  startDateTime:
+                    example: '2024-04-10T06:00:00'
+                    format: date-time
+                    type: string
+                required:
+                - employees
+                - startDateTime
+                - endDateTime
+                type: object
+          type: object
+        - items:
+            items:
+              properties:
+                deviceIPAddress:
+                  example: 10.7.194.16
+                  type: string
+                employee:
+                  properties:
+                    id:
+                      example: 243
+                      type: integer
+                    qualifier:
+                      example: '20335'
+                      type: string
+                  required:
+                  - id
+                  - qualifier
+                  type: object
+                employeeName:
+                  example: Adams, Eliza
+                  type: string
+                form:
+                  properties:
+                    id:
+                      example: 53
+                      type: integer
+                    qualifier:
+                      example: MY STOP
+                      type: string
+                  required:
+                  - id
+                  - qualifier
+                  type: object
+                formType:
+                  properties:
+                    id:
+                      example: 22
+                      type: integer
+                    qualifier:
+                      example: END_ACTIVITY_START_STOP
+                      type: string
+                  required:
+                  - id
+                  - qualifier
+                  type: object
+                fromActivity:
+                  properties:
+                    id:
+                      example: 102
+                      type: integer
+                    qualifier:
+                      example: 203-5
+                      type: string
+                  required:
+                  - id
+                  - qualifier
+                  type: object
+                fromActivityFullName:
+                  example: 101-22/203-5
+                  type: string
+                initiatedBy:
+                  example: Adams, Eliza
+                  type: string
+                initiatedDateTime:
+                  example: '2024-04-29 11:33:58'
+                  type: string
+                initiator:
+                  properties:
+                    id:
+                      example: 243
+                      type: integer
+                    qualifier:
+                      example: '20335'
+                      type: string
+                  required:
+                  - id
+                  - qualifier
+                  type: object
+                moveQuantity:
+                  example: 10.0
+                  format: float
+                  type: number
+                toActivity:
+                  properties:
+                    id:
+                      example: 201
+                      type: integer
+                    qualifier:
+                      example: NewActivity1
+                      type: string
+                  required:
+                  - id
+                  - qualifier
+                  type: object
+                toActivityFullName:
+                  example: 101-22/NewActivity1
+                  type: string
+              required:
+              - employee
+              - form
+              - formType
+              - initiator
+              - fromActivity
+              - fromActivityFullName
+              - toActivity
+              - toActivityFullName
+              - moveQuantity
+              - employeeName
+              - initiatedBy
+              - deviceIPAddress
+              - initiatedDateTime
+              type: object
+            type: array
+          type: array
+      - properties: {}
+        type: object
+  securitySchemes:
+    bearerAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
+info:
+  description: ''
+  title: Welcome to the UKG Pro Workforce Management API
+  version: 1.0.0
+openapi: 3.1.0
+paths:
+  /api/v1/json:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Quick Start
+  /api/v1/v1/work/activity_efficiencies/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Efficiencies
+  /api/v1/v1/work/activity_profiles:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+  /api/v1/v1/work/activity_profiles/multi_create:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+  /api/v1/v1/work/activity_profiles/multi_delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+  /api/v1/v1/work/activity_profiles/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+  /api/v1/v1/work/activity_profiles/multi_update:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+  /api/v1/v1/work/activity_profiles/setup/future_validation_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profile Resources
+  /api/v1/v1/work/activity_profiles/setup/tracking_status_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profile Resources
+  /api/v1/v1/work/activity_profiles/setup/variance_check_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profile Resources
+  /api/v1/v1/work/activity_profiles/setup/work_rules:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profile Resources
+  /api/v1/v1/work/activity_profiles/{id}:
+    delete:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+    put:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Profiles
+  /api/v1/v1/work/activity_shifts/historical_net_changes/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Historical Net Changes
+  /api/v1/v1/work/activity_shifts/net_changes/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Net Changes
+  /api/v1/v1/work/employee_activities/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Assignments
+  /api/v1/v1/work/form_profiles:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+  /api/v1/v1/work/form_profiles/multi_create:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+  /api/v1/v1/work/form_profiles/multi_delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+  /api/v1/v1/work/form_profiles/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+  /api/v1/v1/work/form_profiles/multi_update:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+  /api/v1/v1/work/form_profiles/{id}:
+    delete:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+    put:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Profiles
+  /api/v1/v1/work/forms:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+  /api/v1/v1/work/forms/multi_create:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+  /api/v1/v1/work/forms/multi_delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+  /api/v1/v1/work/forms/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+  /api/v1/v1/work/forms/multi_update:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+  /api/v1/v1/work/forms/setup/control_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Resources
+  /api/v1/v1/work/forms/setup/entry_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Resources
+  /api/v1/v1/work/forms/setup/form_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Resources
+  /api/v1/v1/work/forms/setup/input_source_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Resources
+  /api/v1/v1/work/forms/setup/offline_forms:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Resources
+  /api/v1/v1/work/forms/setup/validation_types:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Form Resources
+  /api/v1/v1/work/forms/{id}:
+    delete:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+    put:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Forms
+  /api/v1/v1/work/move_quantities/audit/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Move Quantity Transaction Audits
+  /api/v1/v1/work/pay_code_actions:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+  /api/v1/v1/work/pay_code_actions/multi_create:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+  /api/v1/v1/work/pay_code_actions/multi_delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+  /api/v1/v1/work/pay_code_actions/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+  /api/v1/v1/work/pay_code_actions/multi_update:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+  /api/v1/v1/work/pay_code_actions/{id}:
+    delete:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+    put:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Actions
+  /api/v1/v1/work/queries:
+    get:
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+  /api/v1/v1/work/queries/multi_create:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+  /api/v1/v1/work/queries/multi_delete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+  /api/v1/v1/work/queries/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+  /api/v1/v1/work/queries/multi_update:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+  /api/v1/v1/work/queries/{id}:
+    delete:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+    put:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity Queries
+  /api/v1/v1/work/team_segments/active_members/multi_read:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Active Team Members
+  /api/v1/v1/work/{workId}:
+    get:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/exports/apply_read:
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/multi_create:
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/multi_delete:
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/multi_read:
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/multi_update:
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/multi_upsert:
+    post:
+      parameters:
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/work/{workId}/{id}:
+    delete:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+    put:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: workId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiV1V1WorkTeamSegmentsActiveMembersMultiReadrequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+      summary: Activity
+  /api/v1/v1/{v1Id}/setup/break_rules/{id}:
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: v1Id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '207':
+          description: 207[WFA-000034] - Some of the entities were not imported because
+            of errors in the source data. Correct those errors and try again.
+security:
+- bearerAuth: []
+servers:
+- url: https://developer.ukg.com
